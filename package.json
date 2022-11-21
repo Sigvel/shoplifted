@@ -1,6 +1,6 @@
 {
   "name": "shoplifted",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Auction website for everything.",
   "main": "index.js",
   "scripts": {
