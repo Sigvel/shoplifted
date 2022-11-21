@@ -1,0 +1,25 @@
+{
+  "name": "shoplifted",
+  "version": "0.0.1",
+  "description": "Auction website for everything.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sigvel/shoplifted.git"
+  },
+  "keywords": [
+    "Auction",
+    "Website",
+    "buy",
+    "sell"
+  ],
+  "author": "Tony",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Sigvel/shoplifted/issues"
+  },
+  "homepage": "https://github.com/Sigvel/shoplifted#readme"
+}
