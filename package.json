@@ -24,5 +24,8 @@
   "homepage": "https://github.com/Sigvel/shoplifted#readme",
   "devDependencies": {
     "sass": "^1.56.1"
+  },
+  "dependencies": {
+    "tailwindcss": "^3.2.4"
   }
 }
