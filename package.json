@@ -21,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/Sigvel/shoplifted/issues"
   },
-  "homepage": "https://github.com/Sigvel/shoplifted#readme"
+  "homepage": "https://github.com/Sigvel/shoplifted#readme",
+  "devDependencies": {
+    "sass": "^1.56.1"
+  }
 }
