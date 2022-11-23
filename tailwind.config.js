@@ -7,6 +7,10 @@ module.exports = {
   ],
   theme: {
     extend: {},
+    container: {
+      center: true,
+      padding: "2rem",
+    },
     colors: {
         "midnight-blue": "#3B4558",
         "midnight-gray": "#171717",
@@ -15,5 +19,5 @@ module.exports = {
         "sky-blue": "#808DA6",
     },
   },
-  plugins: [],
+  plugins: [require("daisyui")],
 }
