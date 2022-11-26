@@ -5,3 +5,16 @@
 @tailwind utilities;
 
 @import "variables";
+
+@layer base {
+  html {
+    font-family: Noto Sans;
+  }
+}
+
+.home-image {
+  background-image: url("../../assets/images/earth-g7348ec7cc_640.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

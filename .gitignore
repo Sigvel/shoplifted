@@ -1,2 +1,10 @@
 /node_modules
 /dist
+notes.md
+
+.prettierrc.json
+.eslintrc.json
+.eslintcache
+.husky
+
+6
