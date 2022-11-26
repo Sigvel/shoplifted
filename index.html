@@ -10,7 +10,7 @@
     <title>Shoplifted | homepage</title>
   </head>
 
-  <!-- Login modal  -->
+  <!-- start of login modal  -->
   <input type="checkbox" id="login-modal" class="modal-toggle" />
   <div class="modal bg-midnight-gray opacity-50">
     <div class="relative">
@@ -91,15 +91,21 @@
     </header>
     <!-- End of header  -->
 
+    <!-- start of main  -->
     <main class="bg-midnight-blue pb-10">
-      <h1>Shoplifted</h1>
+      <h1>Shoplifted homepage</h1>
 
-      <div class="categories mt-20"></div>
-      <h2 class="mt-10 text-center text-lg font-bold">Listings</h2>
+      <div class="mt-10 flex justify-between px-3">
+        <h2 class="text-center text-lg font-bold">Homepage</h2>
+        <select id="filterSelect" class="rounded border border-paper-white bg-midnight-blue">
+          <option value="newFirst" selected>Default</option>
+          <option value="newFirst">new - old</option>
+          <option value="title-az">title a-z</option>
+          <option value="title-za">title z-a</option>
+        </select>
+      </div>
 
-      <option></option>
-
-      <div class="create-dropdown mt-3 flex h-7 items-center justify-center bg-midnight-gray">
+      <div class="create-dropdown mt-5 flex h-7 items-center justify-center bg-midnight-gray">
         <svg xmlns="http://www.w3.org/2000/svg" width="24.746" height="14.619" viewBox="0 0 24.746 14.619">
           <path
             id="Icon_ionic-ios-arrow-down"
@@ -115,6 +121,7 @@
 
       <h2 class="mt-10 text-center text-lg font-bold">recent</h2>
 
+      <!-- start of "slider" -->
       <section id="listing-container" class="mt-4 flex flex-col items-center gap-4">
         <div class="w-9/12 shadow-xl">
           <figure>
@@ -158,7 +165,9 @@
           </div>
         </div>
       </section>
+      <!-- this is the end of the slider  -->
     </main>
+    <!-- end of main  -->
 
     <footer class="footer bg-midnight-gray p-10 text-neutral-content">
       <div>
