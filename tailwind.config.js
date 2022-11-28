@@ -6,7 +6,11 @@ module.exports = {
     "./src/js/**/*.{html, js}"
   ],
   theme: {
-    extend: {},
+    extend: {
+      margin: {
+      "38cp": "38%",
+      }
+    },
     container: {
       center: true,
       padding: "2rem",
