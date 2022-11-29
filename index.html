@@ -92,11 +92,11 @@
     <!-- End of header  -->
 
     <!-- start of main  -->
-    <main class="bg-midnight-blue pb-10">
+    <main class="h-screen bg-midnight-blue pb-10">
       <h1>Shoplifted homepage</h1>
 
       <div class="mt-10 flex justify-between px-3">
-        <h2 class="text-center text-lg font-bold">Homepage</h2>
+        <h2 class="text-center text-lg font-bold">Shoplifted</h2>
         <select id="filterSelect" class="rounded border border-paper-white bg-midnight-blue">
           <option value="newFirst" selected>Default</option>
           <option value="newFirst">new - old</option>
@@ -106,66 +106,28 @@
       </div>
 
       <div class="create-dropdown mt-5 flex h-7 items-center justify-center bg-midnight-gray">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24.746" height="14.619" viewBox="0 0 24.746 14.619">
-          <path
-            id="Icon_ionic-ios-arrow-down"
-            data-name="Icon ionic-ios-arrow-down"
-            d="M18,20.679l8.93-8.937a1.681,1.681,0,0,1,2.384,0,1.7,1.7,0,0,1,0,2.391L19.2,24.258a1.685,1.685,0,0,1-2.327.049L6.68,14.14a1.688,1.688,0,0,1,2.384-2.391Z"
-            transform="translate(-5.688 -10.746)"
-            fill="#f0f0f0"
-            stroke="#f0f0f0"
-            stroke-width="1"
-          />
-        </svg>
+        <i class="fa-solid fa-angle-down text-3xl"></i>
       </div>
 
       <h2 class="mt-10 text-center text-lg font-bold">recent</h2>
 
       <!-- start of "slider" -->
-      <section id="listing-container" class="mt-4 flex flex-col items-center gap-4">
-        <div class="w-9/12 shadow-xl">
-          <figure>
-            <img src="https://placeimg.com/400/225/arch" alt="Item" class="corner" />
-          </figure>
-          <div class="mt-2 border border-paper-white bg-midnight-blue p-2">
-            <h3 class="card-title text-sm">
-              Item from api
-              <!-- <div class="badge badge-secondary"></div> -->
-            </h3>
-            <p class="mt-1 text-sm">Items for you mellow yellow fellow</p>
-            <div class="card-actions mt-3 justify-start">
-              <div class="text-xs font-bold">Fashion</div>
-              <div class="text-xs font-bold">Products</div>
-            </div>
-            <div class="mt-10 flex justify-between">
-              <p class="rounded bg-midnight-gray py-1 px-2 text-xs font-bold text-golden-brown">Curr Bid: 34</p>
-              <p class="rounded bg-midnight-gray py-1 px-2 text-xs font-bold text-golden-brown">Buyout: 1000</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="w-9/12 shadow-xl">
-          <figure>
-            <img src="https://placeimg.com/400/225/arch" alt="Item" class="corner" />
-          </figure>
-          <div class="mt-2 border border-paper-white bg-midnight-blue p-2">
-            <h3 class="card-title text-sm">
-              Item from api
-              <!-- <div class="badge badge-secondary"></div> -->
-            </h3>
-            <p class="mt-1 text-sm">Items for you mellow yellow fellow</p>
-            <div class="card-actions mt-3 justify-start">
-              <div class="text-xs font-bold">Fashion</div>
-              <div class="text-xs font-bold">Products</div>
-            </div>
-            <div class="mt-10 flex justify-between">
-              <p class="rounded bg-midnight-gray py-1 px-2 text-xs font-bold text-golden-brown">Curr Bid: 34</p>
-              <p class="rounded bg-midnight-gray py-1 px-2 text-xs font-bold text-golden-brown">Buyout: 1000</p>
-            </div>
-          </div>
-        </div>
+      <section id="listing-container" class="slider-section mt-4 flex justify-center gap-4">
+        <div id="card-slider" class="contents"></div>
       </section>
-      <!-- this is the end of the slider  -->
+      <!-- end of card slider -->
+      <div class="mt-38cp flex justify-between">
+        <div>
+          <button type="button" id="slide-left" class="pl-2">
+            <i class="fa-solid fa-angle-left text-3xl"></i>
+          </button>
+        </div>
+        <div>
+          <button type="button" id="slide-right" class="pr-2">
+            <i class="fa-solid fa-angle-right text-3xl"></i>
+          </button>
+        </div>
+      </div>
     </main>
     <!-- end of main  -->
 
@@ -174,21 +136,11 @@
         <span class="footer-title">Services</span>
         <a class="link-hover link">Branding</a>
         <a class="link-hover link">Design</a>
-        <a class="link-hover link">Marketing</a>
-        <a class="link-hover link">Advertisement</a>
       </div>
       <div>
         <span class="footer-title">Company</span>
         <a class="link-hover link">About us</a>
         <a class="link-hover link">Contact</a>
-        <a class="link-hover link">Jobs</a>
-        <a class="link-hover link">Press kit</a>
-      </div>
-      <div>
-        <span class="footer-title">Legal</span>
-        <a class="link-hover link">Terms of use</a>
-        <a class="link-hover link">Privacy policy</a>
-        <a class="link-hover link">Cookie policy</a>
       </div>
     </footer>
   </body>
