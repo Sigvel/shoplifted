@@ -1,3 +1,5 @@
+import * as create from "../api/posts/components/post.mjs"
+
 export const slideRightBtn = document.getElementById("slide-right")
 export const slideLeftBtn = document.getElementById("slide-left")
 
@@ -36,5 +38,33 @@ export const slideLeft = () => {
   setTimeout(() => {
     nextItem.dataset.status = "active"
     active = nextIndex
+  })
+}
+
+const cardSlider = document.getElementById("card-slider")
+
+/**
+ *
+ * @param {*} response
+ */
+export const createSliderPosts = (response) => {
+  console.log(response)
+
+  response.map((listing, index) => {
+    // Creating container the cardContainer
+    const container = create.cardContainer()
+
+    if (index === 0) {
+      container.dataset.status = "active"
+    } else {
+      container.dataset.status = "none"
+    }
+
+    container.dataset.index = index
+
+    container.append(create.imageHtml(listing.media), create.listingContent(listing))
+
+    // appending to the section of the slider
+    cardSlider.appendChild(container)
   })
 }
