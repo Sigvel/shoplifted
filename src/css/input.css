@@ -1,0 +1,14 @@
+@import "tailwindcss/base";
+
+@import "tailwindcss/components";
+
+@import "tailwindcss/utilities";
+
+@import "./components/card.css";
+
+/* .home-image {
+  background-image: url("../../assets/images/earth-g7348ec7cc_640.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+} */
