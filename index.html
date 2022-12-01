@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/dist/style.css" />
+    <link href="./dist/output.css" rel="stylesheet" />
     <script src="https://kit.fontawesome.com/d527618ed6.js" crossorigin="anonymous"></script>
     <script src="./src/js/index.mjs" type="module" defer></script>
     <title>Shoplifted | homepage</title>
@@ -61,25 +61,25 @@
   </div>
   <!-- end of register modal  -->
 
-  <body class="m-0 flex h-full flex-col text-paper-white">
+  <body class="m-0 flex h-full flex-col text-paper-white font-sans">
     <!-- start of header  -->
     <header class="fixed z-50 w-screen bg-midnight-gray">
-      <div class="cursor mt-2 mb-2 flex justify-center text-3xl" id="mobile-menu">
+      <div class="cursor mt-2 mb-2 flex justify-center text-3xl cursor-pointer md:hidden" id="mobile-menu">
         <i class="fa-solid fa-bars"></i>
       </div>
 
-      <nav id="nav-items" class="mt-3 hidden">
-        <ul class="flex flex-col place-items-center gap-3">
-          <li class="border-yellow-700 flex gap-32 rounded border px-3 py-1 font-semibold text-golden-brown">
+      <nav id="nav-items" class="mt-3 md:mt-0 hidden md:flex md:justify-between md:bg-midnight-gray">
+        <ul class="flex flex-col md:flex-row place-items-center gap-3 md:ml-3">
+          <li class="border-yellow-700 flex gap-32 md:gap-10 rounded border px-3 py-1 font-semibold text-golden-brown">
             <p class="">Currency:</p>
-            <p class="">1000</p>
+            <p class="curr-holdings">1000</p>
           </li>
-          <li class="hover:text-sky-blue">Home</li>
-          <li>Profile</li>
-          <li>Listings</li>
-          <li><label for="login-modal">login</label></li>
+          <li class="hover:text-sky-blue cursor-pointer">Home</li>
+          <li class="cursor-pointer">Profile</li>
+          <li class="cursor-pointer">Listings</li>
+          <li class="cursor-pointer"><label for="login-modal">login</label></li>
         </ul>
-        <form class="mt-3 mb-2 flex justify-center">
+        <form class="mt-3 mb-2 flex justify-center md:mr-3">
           <label class="mr-2">
             <input class="rounded py-1 pl-1" type="text" placeholder="Search listings" />
           </label>
@@ -95,36 +95,38 @@
     <main class="h-screen bg-midnight-blue pb-10">
       <h1>Shoplifted homepage</h1>
 
+      <!-- Page head text and filter dropdown -->
       <div class="mt-10 flex justify-between px-3">
-        <h2 class="text-center text-lg font-bold">Shoplifted</h2>
-        <select id="filterSelect" class="rounded border border-paper-white bg-midnight-blue">
-          <option value="newFirst" selected>Default</option>
-          <option value="newFirst">new - old</option>
-          <option value="title-az">title a-z</option>
-          <option value="title-za">title z-a</option>
+        <h2 class="text-center text-lg font-bold md:text-2xl">Shoplifted</h2>
+        <select class="rounded border border-paper-white bg-midnight-blue md:w-24 md:text-xl">
+          <option class="md:text-xs" selected>default</option>
+          <option class="md:text-xs" value="newFirst">new - old</option>
+          <option class="md:text-xs" value="title-az ">title a-z</option>
+          <option class="md:text-xs" value="title-za">title z-a</option>
         </select>
       </div>
 
+      <!-- Create post dropdown -->
       <div class="create-dropdown mt-5 flex h-7 items-center justify-center bg-midnight-gray">
-        <i class="fa-solid fa-angle-down text-3xl"></i>
+        <i id="create-listing" class="cursor-pointer fa-solid fa-angle-down text-3xl md:text-4xl"></i>
       </div>
 
-      <h2 class="mt-10 text-center text-lg font-bold">recent</h2>
+      <!-- <h2 class="mt-10 text-center text-lg font-bold md:text-2xl">recent listings</h2> -->
 
       <!-- start of "slider" -->
       <section id="listing-container" class="slider-section mt-4 flex justify-center gap-4">
         <div id="card-slider" class="contents"></div>
       </section>
       <!-- end of card slider -->
-      <div class="mt-38cp flex justify-between">
+      <div class="mt-38cp md:mt-52 flex justify-between">
         <div>
-          <button type="button" id="slide-left" class="pl-2">
-            <i class="fa-solid fa-angle-left text-3xl"></i>
+          <button type="button" id="slide-left" class="pl-2 md:pl-8">
+            <i class="fa-solid fa-angle-left text-3xl md:text-5xl"></i>
           </button>
         </div>
         <div>
-          <button type="button" id="slide-right" class="pr-2">
-            <i class="fa-solid fa-angle-right text-3xl"></i>
+          <button type="button" id="slide-right" class="pr-2 md:pr-8">
+            <i class="fa-solid fa-angle-right text-3xl md:text-5xl"></i>
           </button>
         </div>
       </div>
@@ -133,12 +135,12 @@
 
     <footer class="footer bg-midnight-gray p-10 text-neutral-content">
       <div>
-        <span class="footer-title">Services</span>
+        <span class="footer-title md:text-lg">Services</span>
         <a class="link-hover link">Branding</a>
         <a class="link-hover link">Design</a>
       </div>
       <div>
-        <span class="footer-title">Company</span>
+        <span class="footer-title md:text-lg">Company</span>
         <a class="link-hover link">About us</a>
         <a class="link-hover link">Contact</a>
       </div>
