@@ -2,13 +2,14 @@
 module.exports = {
   content: [
     "./index.html",
-    "./pages/**/*.{html, js}",
-    "./src/js/**/*.{html, js}"
+    "./src/js/api/posts/components/post.mjs",
+    "./pages/**/*.{html,js,mjs}",
+    "./src/js/**/*.{js,mjs}",
   ],
   theme: {
     extend: {
       margin: {
-      "38cp": "38%",
+      "38cp": "25%",
       }
     },
     container: {
@@ -21,6 +22,10 @@ module.exports = {
         "golden-brown": "#A68A4E",
         "paper-white": "#F0F0F0",
         "sky-blue": "#808DA6",
+    },
+    fontFamily: {
+      sans: ["Noto Sans", "sans-serif"],
+      serif: ["Merriweather", "serif"],
     },
   },
   plugins: [require("daisyui")],
