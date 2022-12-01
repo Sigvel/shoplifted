@@ -2,10 +2,10 @@
   "name": "shoplifted",
   "version": "0.1.1",
   "description": "Auction website for everything.",
-  "main": "index.js",
+  "main": "index.mjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npx tailwindcss -i ./src/scss/style.css -o ./dist/style.css --watch",
+    "build": "npx tailwindcss -i ./src/css/input.css -o ./dist/output.css --watch",
     "format": "npx prettier --write",
     "lint": "eslint src/**/*.js",
     "lint-fix": "eslint src/**/*.js --cache --fix",
@@ -37,8 +37,7 @@
     "eslint": "^8.28.0",
     "husky": "^8.0.2",
     "lint-staged": "^13.0.4",
-    "prettier": "^2.8.0",
-    "prettier-plugin-tailwindcss": "^0.2.0"
+    "prettier": "^2.8.0"
   },
   "lint-staged": {
     "*.mjs": [
