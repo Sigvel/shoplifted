@@ -1,16 +1,7 @@
-/* Card with items in it*/
 .card-itm-group {
   transition: transform 400ms ease;
-  position: absolute;
-  transform: translate(0%, 0%);
+  transform: translate(0%, 2%);
 }
-
-/* .slider-section {
-    place-items: center;
-  } */
-
-/* .card-slider {
-  } */
 
 .card-itm-group[data-status="active"] {
   transition-delay: 300ms;
