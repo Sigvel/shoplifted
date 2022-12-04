@@ -49,20 +49,20 @@ const cardSlider = document.getElementById("card-slider");
  */
 export const createSliderPosts = (response) => {
   response.map((listing, index) => {
-    // Creating container the cardContainer
-    const container = create.cardContainer();
+    // card
+    const card = create.card();
 
     if (index === 0) {
-      container.dataset.status = "active";
+      card.dataset.status = "active";
     } else {
-      container.dataset.status = "none";
+      card.dataset.status = "none";
     }
 
-    container.dataset.index = index;
+    card.dataset.index = index;
 
-    container.append(create.imageHtml(listing.media), create.listingContent(listing));
+    card.append(create.listingContent(listing));
 
     // appending to the section of the slider
-    cardSlider.appendChild(container);
+    cardSlider.appendChild(card);
   });
 };
