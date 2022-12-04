@@ -1,10 +1,10 @@
 /**
- * creates the cards item container
+ * carousel slide card
  * @returns
  */
-export const cardContainer = () => {
+export const card = () => {
   const container = document.createElement("div");
-  container.className = "w-9/12 shadow-xl card-itm-group";
+  container.className = "card-itm-group absolute w-full top-0 bottom-0 max-h-32 sm-tablet:max-h-44 xl:max-h-96";
 
   return container;
 };
@@ -19,9 +19,9 @@ export const imageHtml = (media) => {
   }
 
   const figureBox = document.createElement("figure");
-  figureBox.className = "bg-paper-white flex justify-center max-h-72 shadow-md";
+  figureBox.className = "";
   const img = document.createElement("img");
-  img.className = "corner";
+  img.className = "corner h-full w-full object-cover max-h-32 sm-tablet:max-h-44 sm:max-h-52 lg:max-h-64 xl:max-h-96";
   img.src = image;
 
   figureBox.appendChild(img);
@@ -31,7 +31,7 @@ export const imageHtml = (media) => {
 
 const contentHeader = (title) => {
   const contentTitle = document.createElement("h3");
-  contentTitle.className = "card-title text-xs md:text-lg";
+  contentTitle.className = "card-title text-xs md:text-sm";
   contentTitle.textContent = title;
 
   return contentTitle;
@@ -39,7 +39,7 @@ const contentHeader = (title) => {
 
 const description = (info) => {
   const paragraph = document.createElement("p");
-  paragraph.className = "mt-1 text-xs md:text-lg";
+  paragraph.className = "mt-1 text-xs md:text-sm";
   paragraph.textContent = info;
 
   return paragraph;
@@ -47,7 +47,7 @@ const description = (info) => {
 
 const tagsHtml = (tag) => {
   const tagHtml = document.createElement("div");
-  tagHtml.className = "text-xs md:text-lg font-bold";
+  tagHtml.className = "text-xs md:text-sm font-bold";
   tagHtml.textContent = tag;
 
   return tagHtml;
@@ -62,16 +62,16 @@ const bids = (bid) => {
 
   // creates wrapper for the bids
   const bidsWrapper = document.createElement("div");
-  bidsWrapper.className = "mt-10 flex justify-between";
+  bidsWrapper.className = "mt-5 flex justify-between";
 
   // current bid object
   const currentBid = document.createElement("p");
-  currentBid.className = "rounded bg-midnight-gray py-1 px-2 text-xs md:text-lg font-bold text-golden-brown";
-  currentBid.textContent = `Current bid: ${bidAmount}`;
+  currentBid.className = "rounded bg-midnight-gray py-1 px-2 text-xs md:text-sm font-bold text-golden-brown";
+  currentBid.textContent = `Curr bid: ${bidAmount}`;
 
   // latest bid object (is currently number of bids)
   const bids = document.createElement("p");
-  bids.className = "rounded bg-midnight-gray py-1 px-2 text-xs md:text-lg font-bold text-golden-brown";
+  bids.className = "rounded bg-midnight-gray py-1 px-2 text-xs md:text-sm font-bold text-golden-brown";
   bids.textContent = `bids: ${bid.length}`;
 
   // Assembled big HTML node
@@ -98,13 +98,19 @@ export const listingContent = (listing) => {
   });
 
   /**
-   * Html container for the content
+   * content for title and stuff
    */
+  // card-content
   const contentContainer = document.createElement("div");
-  contentContainer.className = "mt-2 border border-paper-white bg-midnight-blue p-2 shadow-md";
+  contentContainer.className = "";
+
+  const contentAbout = document.createElement("div");
+  contentAbout.className = "border border-paper-white bg-midnight-blue p-2 shadow-md mt-1.5";
+
+  contentAbout.append(contentHeader(listing.title), description(listing.description), tagsWrapper, bids(listing.bids));
 
   // appends content to the content container.
-  contentContainer.append(contentHeader(listing.title), description(listing.description), tagsWrapper, bids(listing.bids));
+  contentContainer.append(imageHtml(listing.media), contentAbout);
 
   return contentContainer;
 };
