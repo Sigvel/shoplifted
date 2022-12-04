@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="./dist/output.css" rel="stylesheet" />
+    <link href="/dist/output.css" rel="stylesheet" />
     <script src="https://kit.fontawesome.com/d527618ed6.js" crossorigin="anonymous"></script>
-    <script src="./src/js/index.mjs" type="module" defer></script>
-    <title>Shoplifted | homepage</title>
+    <script src="/src/js/index.mjs" type="module" defer></script>
+    <title>Shoplifted | Listings</title>
   </head>
 
   <!-- start of login modal  -->
@@ -93,7 +93,7 @@
 
     <!-- start of main  -->
     <main class="bg-midnight-blue pb-10 flex flex-col basis-full">
-      <h1>Shoplifted homepage</h1>
+      <h1>Shoplifted Listings Page</h1>
 
       <!-- Page head text and filter dropdown -->
       <div class="mt-10 flex justify-between px-4">
@@ -111,29 +111,8 @@
         <i id="create-listing" class="cursor-pointer fa-solid fa-angle-down text-2xl md:text-3xl"></i>
       </div>
 
-      <!-- <h2 class="mt-10 text-center text-lg font-bold md:text-2xl">recent listings</h2> -->
-
-      <!-- carousel  -->
-      <section class="slider-section h-60 xl:h-96 w-2/3 xl:w-8/12 sm-tablet:w-3/4 mx-auto relative sm-tablet:h-72 mt-3">
-        <div class="bg-midnight-blue z-49 absolute top-1/3 md:top-2/4 translate-y-minus-50p bg-transparent left-sml-btn-l">
-          <button type="button" id="slide-left" class="w-12 h-16">
-            <i class="fa-solid fa-angle-left text-2xl md:text-4xl"></i>
-          </button>
-        </div>
-        <!-- Carousel track container -->
-        <div id="listing-container" class="slider-container h-full relative">
-          <!-- carousel_track -->
-          <div id="card-slider" class="p-0 m-0"></div>
-        </div>
-        <div class="bg-midnight-blue z-49 absolute top-1/3 md:top-2/4 translate-y-minus-50p bg-transparent right-sml-btn-r">
-          <button type="button" id="slide-right" class="w-12 h-16">
-            <i class="fa-solid fa-angle-right text-2xl md:text-4xl"></i>
-          </button>
-        </div>
-      </section>
-
       <!-- categories -->
-      <section class="mt-20 sm:mt-32 md:mt-48 xl:mt-64">
+      <section class="mt-5 sm:mt-20 md:mt-24 xl:mt-30">
         <div class="categories flex justify-evenly gap-1 md:gap-px flex-wrap">
           <div class="text-center sm-tablet:py-2 sm-tablet:px-3 md:py-3 md:px-6 cursor-pointer border border-midnight-blue hover:border-paper-white hover:shadow-xl">
             <i class="fa-solid fa-house text-lg sm:text-xl md:text-3xl xl:text-5xl"></i>
@@ -157,6 +136,8 @@
           </div>
         </div>
       </section>
+
+      <section class="xl:h-96 w-2/3 xl:w-8/12 sm-tablet:w-3/4 sm-tablet:h-72 mt-3"></section>
     </main>
     <!-- end of main  -->
 
