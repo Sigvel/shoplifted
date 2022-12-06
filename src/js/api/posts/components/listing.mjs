@@ -1,35 +1,47 @@
+// LISTING CARD
+
 /**
- * carousel slide card
- * @returns
+ * creates the html for the card container
+ * @returns a div html node
  */
 export const card = () => {
   const container = document.createElement("div");
-  container.className = "card-itm-group absolute w-full top-0 bottom-0 max-h-32 sm-tablet:max-h-44 xl:max-h-96";
+  container.className = "w-90 mt-5 md:mt-0";
 
   return container;
 };
 
+/**
+ * creates a html node with the provided image.
+ * @param {Array} media contains the image array of the listing
+ * @returns a html node with the image
+ */
 export const imageHtml = (media) => {
   let image;
 
   if (media.length === 0) {
-    image = "/assets/images/placeholder/Item-placeholder.jpg";
+    image = "https://www.unfe.org/wp-content/uploads/2019/04/SM-placeholder-1024x512.png";
   } else {
     image = media[0];
   }
 
   const figureBox = document.createElement("figure");
-  figureBox.className = "";
+  figureBox.className = "bg-paper-white";
   const img = document.createElement("img");
-  img.className = "corner h-full w-full object-cover max-h-32 sm-tablet:max-h-44 sm:max-h-52 lg:max-h-64 xl:max-h-96";
+  img.className = "corner h-full w-full object-cover md:max-h-36 lg:max-h-56 xl:max-h-40 shadow-lg";
   img.src = image;
+  img.onerror = `this.src="/assets/images/placeholder/Item-placeholder.jpg"`;
 
   figureBox.appendChild(img);
 
   return figureBox;
 };
-
-const contentHeader = (title) => {
+/**
+ * creates a node element with the title provided from the api
+ * @param {string} title contains the title of the listing
+ * @returns a html node with the title.
+ */
+export const contentHeader = (title) => {
   const contentTitle = document.createElement("h3");
   contentTitle.className = "card-title text-xs md:text-sm";
   contentTitle.textContent = title;
@@ -37,7 +49,12 @@ const contentHeader = (title) => {
   return contentTitle;
 };
 
-const description = (info) => {
+/**
+ * creates a html node with the description of the listing
+ * @param {string} info contains the description provided from the API
+ * @returns a html node with the description
+ */
+export const description = (info) => {
   const paragraph = document.createElement("p");
   paragraph.className = "mt-1 text-xs md:text-sm";
   paragraph.textContent = info;
@@ -45,7 +62,12 @@ const description = (info) => {
   return paragraph;
 };
 
-const tagsHtml = (tag) => {
+/**
+ * creates a html node with the tags from the listing
+ * @param {Array} tag contains an array of tags provided from the api
+ * @returns a html node with the tags
+ */
+export const tagsHtml = (tag) => {
   const tagHtml = document.createElement("div");
   tagHtml.className = "text-xs md:text-sm font-bold";
   tagHtml.textContent = tag;
@@ -53,7 +75,12 @@ const tagsHtml = (tag) => {
   return tagHtml;
 };
 
-const bids = (bid) => {
+/**
+ * creates a html node with the amount of bids and total bid
+ * @param {Array} bid contains the array of the bids.
+ * @returns html node with amount of bids and total bid.
+ */
+export const bids = (bid) => {
   let bidAmount = 0;
 
   for (let i = 0; i < bid.length; i++) {
@@ -98,16 +125,17 @@ export const listingContent = (listing) => {
   });
 
   /**
-   * content for title and stuff
+   * content to hold everything together
    */
-  // card-content
   const contentContainer = document.createElement("div");
-  contentContainer.className = "";
 
+  /**
+   * about listing container
+   */
   const contentAbout = document.createElement("div");
-  contentAbout.className = "border border-paper-white bg-midnight-blue p-2 shadow-md mt-1.5";
+  contentAbout.className = "border border-paper-white bg-midnight-blue p-2 shadow-md mt-1.5 shadow-lg";
 
-  contentAbout.append(contentHeader(listing.title), description(listing.description), tagsWrapper, bids(listing.bids));
+  contentAbout.append(contentHeader(listing.title), bids(listing.bids));
 
   // appends content to the content container.
   contentContainer.append(imageHtml(listing.media), contentAbout);
