@@ -2,7 +2,7 @@
 module.exports = {
   content: [
     "./index.html",
-    "./src/js/api/posts/components/post.mjs",
+    "./src/js/api/posts/components/*.mjs",
     "./pages/**/*.{html,js,mjs}",
   ],
   theme: {
@@ -18,6 +18,7 @@ module.exports = {
         "sml-btn-l": "-50px",
         "50p": "50%",
         "49": "12.3rem",
+        "76": "79%",
       }
     },
     container: {
