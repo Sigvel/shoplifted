@@ -1,4 +1,4 @@
-import * as create from "../api/posts/components/post.mjs";
+import * as create from "../api/posts/components/slideCard.mjs";
 
 export const slideRightBtn = document.getElementById("slide-right");
 export const slideLeftBtn = document.getElementById("slide-left");
@@ -50,7 +50,7 @@ const cardSlider = document.getElementById("card-slider");
 export const createSliderPosts = (response) => {
   response.map((listing, index) => {
     // card
-    const card = create.card();
+    const card = create.sliderCard();
 
     if (index === 0) {
       card.dataset.status = "active";
@@ -60,7 +60,7 @@ export const createSliderPosts = (response) => {
 
     card.dataset.index = index;
 
-    card.append(create.listingContent(listing));
+    card.append(create.sliderContent(listing));
 
     // appending to the section of the slider
     cardSlider.appendChild(card);
