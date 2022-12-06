@@ -3,6 +3,7 @@ module.exports = {
   content: [
     "./index.html",
     "./src/js/api/posts/components/*.mjs",
+    "./src/js/**/*.mjs",
     "./pages/**/*.{html,js,mjs}",
   ],
   theme: {
