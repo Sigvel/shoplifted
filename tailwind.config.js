@@ -32,6 +32,8 @@ module.exports = {
         "golden-brown": "#A68A4E",
         "paper-white": "#F0F0F0",
         "sky-blue": "#808DA6",
+        "winning": "#2FD45B",
+        "losing": "#DB3333",
     },
     fontFamily: {
       sans: ["Noto Sans", "sans-serif"],
