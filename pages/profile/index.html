@@ -61,6 +61,35 @@
   </div>
   <!-- end of register modal  -->
 
+  <!-- start of profile edit modal -->
+  <input type="checkbox" id="profile-modal" class="modal-toggle" />
+  <div class="modal bg-midnight-gray opacity-50">
+    <div class="relative">
+      <label for="profile-modal" class="absolute right-0 text-xl font-bold">✕</label>
+      <h2 class="mb-8 text-center text-xl font-bold">Edit profile</h2>
+      <form class="flex flex-col" id="profile-form">
+        <label class="mt-2">
+          <input class="rounded border bg-midnight-gray py-1 pl-1" type="text" placeholder="Username" />
+        </label>
+
+        <label class="mt-2">
+          <input class="rounded border bg-midnight-gray py-1 pl-1" type="url" placeholder="Username" />
+        </label>
+
+        <h3>confirm changes</h3>
+        <label class="mt-2">
+          <input class="rounded border bg-midnight-gray py-1 pl-1" type="password" minlength="8" placeholder="Password" />
+        </label>
+
+        <div class="btn-wrapper mt-3 flex justify-between py-1">
+          <label for="login-modal" class="rounded bg-sky-blue py-1 px-2">undo</label>
+          <button type="submit" class="rounded bg-sky-blue py-1 px-2">accept</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- end of profile edit modal -->
+
   <body class="m-0 flex h-screen flex-col text-paper-white font-sans">
     <!-- start of header  -->
     <header class="fixed z-50 w-screen bg-midnight-gray">
@@ -116,16 +145,16 @@
       <section id="listings" class="w-10/12 place-self-center mt-5 sm:w-76 md:grid md:grid-cols-2 md:gap-5 xl:grid-cols-3"></section>
 
       <section class="flex flex-col items-center">
-        <div class="flex w-11/12">
-          <figure class="w-28">
+        <div class="flex w-11/12 lg:w-4/6">
+          <figure class="w-28 h-20 md:h-24">
             <img class="w-full h-full object-cover" src="/assets/images/placeholder/profile/avatar-g70ad01aee_640.png" />
           </figure>
-          <div class="flex flex-col ml-2 w-full">
+          <div class="flex flex-col ml-2 w-full justify-between">
             <div class="flex justify-between mb-1">
               <h2 class="text-sm font-bold">Legolass</h2>
-              <button type="button" class="rounded bg-sky-blue px-2 ml-2">edit</button>
+              <label for="profile-modal" class="rounded bg-sky-blue px-2 ml-2">edit</label>
             </div>
-            <div>
+            <div class="md:w-60">
               <div class="flex justify-between mb-1 rounded bg-midnight-gray py-1 px-2 text-xs md:text-sm font-bold text-golden-brown">
                 <p>bids:</p>
                 <p id="bids">2</p>
@@ -138,16 +167,18 @@
           </div>
         </div>
 
-        <div class="flex justify-between mt-2 w-11/12 rounded bg-midnight-gray py-2 px-2 text-xs md:text-sm font-bold text-golden-brown">
-          <p>credits:</p>
-          <p id="curr-holdings">439</p>
+        <div class="flex w-11/12 lg:w-4/6">
+          <div class="w-full flex justify-between mt-2 md:w-81 md:place-self-start rounded bg-midnight-gray py-2 px-2 text-xs md:text-sm font-bold text-golden-brown">
+            <p>credits:</p>
+            <p id="curr-holdings">439</p>
+          </div>
         </div>
       </section>
 
       <h2 class="text-center text-lg font-bold md:text-2xl mt-7">Current bids</h2>
 
       <section id="current-bids" class="flex flex-col items-center">
-        <div class="bg-sky-blue w-11/12 rounded mt-3 cursor-pointer hover:bg-midnight-gray">
+        <div class="bg-sky-blue w-11/12 lg:w-4/6 rounded mt-3 cursor-pointer hover:bg-midnight-gray">
           <p id="listing-name" class="text-center font-bold text-sm mt-2 mb-2">Listings name</p>
           <div class="flex flex-col place-items-center">
             <div class="flex justify-between w-10/12 mb-2 rounded bg-midnight-gray py-1 px-2 text-xs md:text-sm font-bold text-golden-brown">
