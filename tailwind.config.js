@@ -37,9 +37,9 @@ module.exports = {
         "sky-blue": "#808DA6",
         "winning": "#2FD45B",
         "losing": "#DB3333",
-        "error-txt": "#dc2626",
+        "error-txt": "#b91c1c",
         "error": "#f87171",
-        "success-txt": "#16a34a",
+        "success-txt": "#15803d",
         "success": "#4ade80",
     },
     fontFamily: {
