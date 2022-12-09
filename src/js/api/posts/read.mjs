@@ -1,5 +1,5 @@
 import { apiUrl, listings } from "../constants.mjs";
-import * as create from "./components/listing.mjs";
+import * as create from "./templates/listing.mjs";
 import { createSliderPosts } from "/src/js/components/slider.mjs";
 
 /**

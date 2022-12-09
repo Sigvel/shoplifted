@@ -1,4 +1,4 @@
-import * as create from "../api/posts/components/slideCard.mjs";
+import * as create from "../api/posts/templates/slideCard.mjs";
 
 export const slideRightBtn = document.getElementById("slide-right");
 export const slideLeftBtn = document.getElementById("slide-left");
