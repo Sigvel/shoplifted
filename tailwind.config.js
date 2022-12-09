@@ -5,6 +5,7 @@ module.exports = {
     "./src/js/api/posts/components/*.mjs",
     "./src/js/**/*.mjs",
     "./pages/**/*.{html,js,mjs}",
+    "./src/js/components/errorMsg.mjs",
   ],
   theme: {
     extend: {
@@ -36,6 +37,10 @@ module.exports = {
         "sky-blue": "#808DA6",
         "winning": "#2FD45B",
         "losing": "#DB3333",
+        "error-txt": "#dc2626",
+        "error": "#f87171",
+        "success-txt": "#16a34a",
+        "success": "#4ade80",
     },
     fontFamily: {
       sans: ["Noto Sans", "sans-serif"],
