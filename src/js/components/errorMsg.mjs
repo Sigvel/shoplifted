@@ -1,4 +1,4 @@
-export const feedback = document.getElementById("feedback-msg");
+export const feedback = document.querySelectorAll(".feedback-msg");
 
 export function errorMessage(message, status) {
   let bgColor = "bg-error";
@@ -11,7 +11,9 @@ export function errorMessage(message, status) {
     color = "text-success-txt";
   }
 
-  feedback.innerHTML = `<div class="${bgColor} w-full py-1">
-  <p class="${color} text-center font-bold">${message}</p>
-  </div>`;
+  feedback.forEach((container) => {
+    container.innerHTML = `<div class="${bgColor} w-full px-1">
+    <p class="${color} text-center font-bold">${message}</p>
+    </div>`;
+  });
 }
