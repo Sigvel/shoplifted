@@ -128,9 +128,44 @@
       </div>
 
       <!-- Create post dropdown -->
-      <div class="create-dropdown mt-5 flex h-7 items-center justify-center bg-midnight-gray">
-        <i id="create-listing" class="cursor-pointer fa-solid fa-angle-down text-2xl md:text-3xl"></i>
-      </div>
+      <section class="create-section bg-midnight-gray mt-5">
+        <div id="create-listing_btn" class="create-dropdown flex h-7 items-center justify-center bg-midnight-gray">
+          <i class="cursor-pointer fa-solid fa-angle-up text-2xl md:text-3xl"></i>
+        </div>
+        <div id="create-listing" class="hidden">
+          <h2 class="text-center font-bold text-lg mt-3">Create listing</h2>
+
+          <!-- create listing form  -->
+          <form class="bg-midnight-gray pt-2 text-midnight-gray" id="listing-form">
+            <div class="flex justify-between mt-3 mb-2 w-11/12 lg:w-8/12 mx-auto">
+              <label for="title" class="">
+                <input name="title" class="py-1 px-1 rounded w-28 md:text-base" type="text" placeholder="title" minlength="2" />
+              </label>
+              <label for="tags">
+                <input name="tags" class="py-1 px-1 rounded w-28 md:text-base" type="text" placeholder="tags" minlength="2" />
+              </label>
+            </div>
+            <label for="description" class="flex justify-center mb-2">
+              <textarea name="description" class="rounded w-11/12 lg:w-8/12" rows="5" style="resize: none" placeholder="description"></textarea>
+            </label>
+            <label for="endsAt" class="flex justify-center">
+              <input name="endsAt" type="datetime-local" class="py-1 px-1 rounded w-11/12 lg:w-8/12 md:text-base mb-2" placeholder="due" />
+            </label>
+            <label for="media" class="flex flex-col items-center media-container">
+              <div class="flex w-11/12 lg:w-8/12 justify-between mb-3">
+                <input data-type="url" name="media" type="text" class="py-1 px-1 rounded w-11/12 lg:w-8/12 md:text-base" placeholder="media url" />
+                <button data-type="add-btn" type="button" class="text-paper-white rounded bg-sky-blue py-1 px-2 font-bold">+</button>
+              </div>
+            </label>
+            <div class="errorBox mb-2 w-11/12 lg:w-8/12 mx-auto"></div>
+            <div class="flex justify-between mb-2 w-11/12 lg:w-8/12 mx-auto">
+              <label class="text-paper-white rounded bg-sky-blue py-1 px-2">cancel</label>
+              <button type="submit" class="text-paper-white rounded bg-sky-blue py-1 px-2">accept</button>
+            </div>
+          </form>
+        </div>
+        <!-- end of create listing form -->
+      </section>
 
       <!-- <h2 class="mt-10 text-center text-lg font-bold md:text-2xl">recent listings</h2> -->
 
