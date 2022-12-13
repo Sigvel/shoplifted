@@ -10,8 +10,6 @@ import { load } from "../storage/load.mjs";
 //   },
 
 export async function editProfile(data) {
-  console.log(JSON.stringify(data));
-
   const body = JSON.stringify(data);
 
   try {
