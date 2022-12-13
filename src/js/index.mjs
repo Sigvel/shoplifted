@@ -5,25 +5,32 @@ import { register } from "./api/services/handlers/register.mjs";
 import { login } from "./api/services/handlers/login.mjs";
 import { fetchProfile } from "./api/profile/read.mjs";
 import { edit } from "./api/profile/handlers/edit.mjs";
+import { create, showCreateForm } from "./api/posts/handlers/createListing.mjs";
+import { addUrl } from "./api/posts/handlers/addUrl.mjs";
 
 hamburgerMenu.addEventListener("click", menu);
+// all pages
+showCreateForm();
 
-// fetch posts
+addUrl();
+
+create();
+
+// FETCH POSTS
+
+// specific page, homepage, listings page
 fetchPosts();
-
+// profile
 fetchProfile();
 
 // Login & register
 register();
-
 login();
 
-// Profile
-
+// Profile handlers
 edit();
 
 // routers
-
 if (location.pathname === "/index.html") {
   // slider button listeners
   slideRightBtn.addEventListener("click", slideRight);
