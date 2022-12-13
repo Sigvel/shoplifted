@@ -4,7 +4,7 @@ module.exports = {
     "./index.html",
     "./src/js/api/posts/components/*.mjs",
     "./src/js/**/*.mjs",
-    "./pages/**/*.{html,js,mjs}",
+    "./pages/**/*.html",
     "./src/js/components/errorMsg.mjs",
   ],
   theme: {
@@ -23,6 +23,7 @@ module.exports = {
         "76": "79%",
         "81": "21.5rem",
         "1/1": "4%",
+        "11/13": "94%",
       }
     },
     container: {
