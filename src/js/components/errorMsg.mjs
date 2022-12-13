@@ -11,9 +11,7 @@ export function errorMessage(message, status) {
     color = "text-success-txt";
   }
 
-  feedback.forEach((container) => {
-    container.innerHTML = `<div class="${bgColor} w-full px-1">
+  return `<div class="${bgColor} w-full px-1">
     <p class="${color} text-center font-bold">${message}</p>
     </div>`;
-  });
 }
