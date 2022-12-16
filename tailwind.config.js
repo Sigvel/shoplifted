@@ -2,7 +2,7 @@
 module.exports = {
   content: [
     "./index.html",
-    "./src/js/api/posts/components/*.mjs",
+    "./src/js/api/posts/templates/*.mjs",
     "./src/js/**/*.mjs",
     "./pages/**/*.html",
     "./src/js/components/errorMsg.mjs",
@@ -15,6 +15,9 @@ module.exports = {
       spacing: {
         "20r": "5rem",
         "200": "6rem",
+        "0%": "0%",
+        "2%": "2%",
+        "5%": "5%",
         'minus-50': "-50%",
         "sml-btn-r": "-50px",
         "sml-btn-l": "-50px",
@@ -36,6 +39,7 @@ module.exports = {
         "golden-brown": "#A68A4E",
         "paper-white": "#F0F0F0",
         "sky-blue": "#808DA6",
+        "water-blue": "#5E77A6",
         "winning": "#2FD45B",
         "losing": "#DB3333",
         "error-txt": "#b91c1c",
