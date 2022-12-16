@@ -11,7 +11,7 @@ export function errorMessage(message, status) {
     color = "text-success-txt";
   }
 
-  return `<div class="${bgColor} w-full px-1">
+  return `<div class="${bgColor} w-full px-2">
     <p class="${color} text-center font-bold">${message}</p>
     </div>`;
 }
