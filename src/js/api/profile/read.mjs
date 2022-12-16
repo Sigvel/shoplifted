@@ -13,8 +13,6 @@ export async function fetchProfile() {
     const response = await fetch(`${apiUrl}${profileUrl}`, options);
     const json = await response.json();
 
-    console.log(json);
-
     buildProfile(json);
   } catch (error) {
     console.log(error);
@@ -26,14 +24,15 @@ const buildProfile = (profile) => {
   holdings.forEach((container) => {
     container.innerHTML = `${profile.credits}`;
   });
+  if (location.href === "/pages/profile/index.html") {
+    if (profile.avatar === null) {
+      media.src = "/assets/images/placeholder/profile/avatar-g70ad01aee_640.png";
+    } else {
+      media.src = profile.avatar;
+    }
 
-  if (profile.avatar === null) {
-    media.src = "/assets/images/placeholder/profile/avatar-g70ad01aee_640.png";
-  } else {
-    media.src = profile.avatar;
+    listings.innerHTML = `${profile.listings.length}`;
+    bidWins.innerHTML = `${profile.wins.length}`;
+    userName.innerHTML = `${profile.name}`;
   }
-
-  listings.innerHTML = `${profile.listings.length}`;
-  bidWins.innerHTML = `${profile.wins.length}`;
-  userName.innerHTML = `${profile.name}`;
 };
