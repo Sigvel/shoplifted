@@ -6,7 +6,7 @@
  */
 export const sliderCard = () => {
   const container = document.createElement("div");
-  container.className = "card-itm-group absolute w-full top-0 bottom-0 max-h-32 sm-tablet:max-h-44 xl:max-h-96";
+  container.className = "card-itm absolute w-full top-0 bottom-0 max-h-32 sm-tablet:max-h-44 xl:max-h-96";
 
   return container;
 };
@@ -130,8 +130,9 @@ export const sliderContent = (listing) => {
   /**
    * content to hold everything together. QUESTIONABLE?
    */
-  const contentContainer = document.createElement("div");
-  contentContainer.className = "";
+  const contentContainer = document.createElement("a");
+  contentContainer.className = "cursor-pointer";
+  contentContainer.href = `/pages/details/index.html?id=${listing.id}`;
 
   /**
    * about listing container
