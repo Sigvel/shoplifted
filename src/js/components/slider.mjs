@@ -3,7 +3,7 @@ import * as create from "../api/posts/templates/slideCard.mjs";
 export const slideRightBtn = document.getElementById("slide-right");
 export const slideLeftBtn = document.getElementById("slide-left");
 
-const card = document.getElementsByClassName("card-itm-group");
+const card = document.getElementsByClassName("card-itm");
 
 let active = 0;
 
