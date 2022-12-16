@@ -1,12 +1,22 @@
-.card-itm-group {
+.card-itm {
   transition: transform 400ms ease;
   transform: translate(0%, 2%);
 }
 
-.card-itm-group[data-status="active"] {
+.card-itm[data-status="active"] {
   transition-delay: 300ms;
 }
 
-.card-itm-group[data-status="none"] {
+.card-itm[data-status="none"] {
   transform: scale(0);
+}
+
+/* Page specific image slider */
+
+.img-box[data-status="active"] {
+  transition-delay: 300ms;
+}
+
+.img-box[data-status="none"] {
+  display: none;
 }
