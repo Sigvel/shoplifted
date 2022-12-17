@@ -1,6 +1,6 @@
 import { slideRight, slideLeft } from "../../../components/slider.mjs";
 
-// LISTING CARD
+// LISTINGS CARD
 
 /**
  * creates the html for the card container
@@ -32,7 +32,7 @@ export const imageHtml = (media) => {
   const img = document.createElement("img");
   img.className = "corner h-full w-full object-cover md:max-h-36 lg:max-h-56 xl:max-h-40 shadow-lg";
   img.src = image;
-  img.onerror = `this.src="/assets/images/placeholder/Item-placeholder.jpg"`;
+  img.onerror = `src="/assets/images/placeholder/Item-placeholder.jpg"`;
 
   figureBox.appendChild(img);
 
@@ -52,6 +52,44 @@ export const contentHeader = (title) => {
 };
 
 /**
+ * creates the expired date time html for the specific listing.
+ * @param {string} time contains the date time format from API
+ */
+export const listingEndsAt = (time) => {
+  const section = document.getElementById("expireTimeSection");
+
+  const container = document.createElement("div");
+  container.className = "mt-4 rounded w-11/12 lg:w-8/12 mx-auto bg-water-blue flex justify-between px-3 py-3";
+
+  const expires = document.createElement("p");
+  expires.className = "font-bold";
+  expires.textContent = "Expire date:";
+
+  const endsAt = document.createElement("p");
+
+  const listingDate = new Date(time).toLocaleString("eu", { timeZone: "Europe/Stockholm" });
+
+  const listingTime = new Date(time).getTime();
+  const currentTime = new Date().getTime();
+
+  const distance = listingTime - currentTime;
+
+  const [liDate, liHours] = listingDate.split(",");
+
+  if (distance >= 0) {
+    endsAt.textContent = `${liDate}, ${liHours}`;
+    endsAt.classList.add("font-bold");
+  } else {
+    endsAt.textContent = "EXPIRED";
+    endsAt.classList.add("text-error-txt", "font-bold");
+  }
+
+  container.append(expires, endsAt);
+
+  section.appendChild(container);
+};
+
+/**
  * creates a html node with the description of the listing
  * @param {string} info contains the description provided from the API
  * @returns a html node with the description
@@ -64,6 +102,12 @@ export const description = (info) => {
   return paragraph;
 };
 
+/**
+ * Goes through the tags and create html
+ * elements for each tag and returns them in a container.
+ * @param {array} tagsArr
+ * @returns html node with the tags
+ */
 export const tags = (tagsArr) => {
   /**
    * Container for tags
@@ -131,11 +175,9 @@ export const listingsContent = (listings) => {
   /**
    * content to hold everything together
    */
-  const contentContainer = document.createElement("a");
-  contentContainer.className = "cursor-pointer";
-  contentContainer.href = `/pages/details/index.html?id="${listings.id}"`;
-
-  console.log(contentContainer);
+  const contentAnchor = document.createElement("a");
+  contentAnchor.className = "cursor-pointer";
+  contentAnchor.href = `/pages/details/index.html?id="${listings.id}"`;
   /**
    * about listing container
    */
@@ -145,23 +187,21 @@ export const listingsContent = (listings) => {
   contentAbout.append(contentHeader(listings.title), bids(listings.bids));
 
   // appends content to the content container.
-  contentContainer.append(imageHtml(listings.media), contentAbout);
+  contentAnchor.append(imageHtml(listings.media), contentAbout);
 
-  return contentContainer;
+  return contentAnchor;
 };
 
 // SPECIFIC LISTING
 
 export const sliderContainer = () => {
-  // card-itm-group  "The class around the images f.eks the div"
   const imgCont = document.createElement("div");
-
   return imgCont;
 };
 
 export const slideBtnLeft = () => {
   const btnLeft = document.createElement("button");
-  btnLeft.className = "absolute z-50 top-2% h-full w-5% hover:border hover:border-paper-white";
+  btnLeft.className = "absolute z-50 top-2% h-full w-5% hover:border hover:border-paper-white hover:opacity-30 bg-midnight-gray opacity-40";
 
   btnLeft.addEventListener("click", slideLeft);
 
@@ -205,7 +245,7 @@ export const sliderImgs = (imgs) => {
 
 export const slideBtnRight = () => {
   const btnRight = document.createElement("button");
-  btnRight.className = "absolute top-2% h-full w-5% right-0% hover:border hover:border-paper-white";
+  btnRight.className = "absolute top-2% h-full w-5% right-0% hover:border hover:border-paper-white hover:opacity-30 bg-midnight-gray opacity-40";
 
   btnRight.addEventListener("click", slideRight);
 
@@ -219,11 +259,18 @@ export const slideBtnRight = () => {
 
 export const listing = (listing) => {
   console.log(listing);
+
+  listingEndsAt(listing.endsAt);
+
   const cardImgs = document.createElement("div");
   cardImgs.className = "slider-container h-full relative";
 
   // Holds the image sliders
-  cardImgs.append(slideBtnLeft(), sliderImgs(listing.media), slideBtnRight());
+  if (listing.media.length >= 1) {
+    cardImgs.append(sliderImgs(listing.media));
+  } else {
+    cardImgs.append(slideBtnLeft(), sliderImgs(listing.media), slideBtnRight());
+  }
 
   // listing content
   const infoWrapper = document.createElement("div");
@@ -232,7 +279,7 @@ export const listing = (listing) => {
   infoWrapper.append(contentHeader(listing.title), description(listing.description), tags(listing.tags), bids(listing.bids));
 
   const card = document.createElement("div");
-  card.className = "w-11/12 lg:w-8/12 mx-auto mt-3";
+  card.className = "w-11/12 lg:w-8/12 mx-auto mt-1";
 
   card.append(cardImgs, infoWrapper);
 
