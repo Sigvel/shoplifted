@@ -266,7 +266,7 @@ export const listing = (listing) => {
   cardImgs.className = "slider-container h-full relative";
 
   // Holds the image sliders
-  if (listing.media.length >= 1) {
+  if (listing.media.length <= 1) {
     cardImgs.append(sliderImgs(listing.media));
   } else {
     cardImgs.append(slideBtnLeft(), sliderImgs(listing.media), slideBtnRight());
