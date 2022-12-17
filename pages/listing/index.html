@@ -88,28 +88,22 @@
       <div class="cursor mt-2 mb-2 flex justify-center text-3xl cursor-pointer md:hidden" id="mobile-menu">
         <i class="fa-solid fa-bars"></i>
       </div>
-
-      <nav id="nav-items" class="mt-3 md:mt-0 hidden md:flex md:justify-between md:ml-1 md:bg-midnight-gray">
-        <ul class="flex flex-col md:flex-row place-items-center gap-3 md:ml-3 uppercase">
-          <li class="border-yellow-700 flex gap-32 md:gap-10 rounded border px-2 py-1 font-semibold text-golden-brown">
-            <p class="">Currency:</p>
-            <p class="curr-holdings">1000</p>
+      <nav id="nav-items" class="mt-3 md:mt-0 hidden md:w-11/12 lg:w-8/12 md:flex md:justify-between md:mx-auto md:bg-midnight-gray">
+        <ul class="flex flex-col md:flex-row place-items-center gap-3 uppercase">
+          <li class="border-yellow-700 flex gap-28 md:gap-7 md:text-sm rounded border px-2 py-1 font-semibold text-golden-brown">
+            <p>Currency:</p>
+            <p class="curr-holdings"></p>
           </li>
-          <li class="hover:text-sky-blue cursor-pointer"><a href="/index.html">home</a></li>
-          <li class="hover:text-sky-blue cursor-pointer"><a href="/pages/profile/index.html">profile</a></li>
-          <li class="hover:text-sky-blue cursor-pointer"><a href="/pages/listing/index.html">listings</a></li>
-          <li class="hover:text-sky-blue">
+          <li class="hover:text-sky-blue font-semibold cursor-pointer md:text-sm"><a href="/index.html">home</a></li>
+          <li class="hover:text-sky-blue font-semibold cursor-pointer md:text-sm"><a href="/pages/profile/index.html">profile</a></li>
+          <li class="hover:text-sky-blue text-sky-blue font-semibold cursor-pointer md:text-sm"><a href="/pages/listing/index.html">listings</a></li>
+          <li class="hover:text-sky-blue font-semibold md:text-sm">
             <label class="cursor-pointer" for="login-modal"><a>login</a></label>
           </li>
         </ul>
-        <form class="mt-3 mb-2 flex justify-center md:mr-4">
-          <label class="mr-2">
-            <input class="rounded py-1 pl-1" type="text" placeholder="Search listings" />
-          </label>
-          <button class="rounded bg-paper-white px-2 text-xl text-midnight-gray" type="button">
-            <i class="fa-solid fa-magnifying-glass"></i>
-          </button>
-        </form>
+        <a href="./index.html" class="rounded bg-sky-blue py-1 px-2 mt-2 mb-2">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </a>
       </nav>
     </header>
     <!-- End of header  -->
@@ -119,7 +113,7 @@
       <h1>Shoplifted Listings Page</h1>
 
       <!-- Page head text and filter dropdown -->
-      <div class="mt-10 flex justify-between px-4">
+      <div class="mt-10 flex justify-between w-11/12 lg:w-8/12 mx-auto">
         <h2 class="text-center text-lg font-bold md:text-2xl">Listings</h2>
         <select class="rounded border border-paper-white bg-midnight-blue md:w-24 md:text-xl cursor-pointer">
           <option selected>default</option>
@@ -169,9 +163,14 @@
         <!-- end of create listing form -->
       </section>
 
+      <form id="search" class="mt-5 mb-5 w-11/12 lg:w-8/12 mx-auto flex justify-center">
+        <label for="searchInput" id="searchInput"></label>
+        <input required minlength="2" name="searchInput" class="text-midnight-gray rounded text-lg py-2 pl-1 w-full" type="text" placeholder="Search listings" />
+      </form>
+
       <!-- categories -->
       <section class="mt-5 xl:mt-20">
-        <div class="categories flex justify-evenly gap-1 md:gap-1 flex-wrap">
+        <div class="categories flex justify-evenly gap-1 md:gap-1 flex-wrap md:w-11/12 lg:w-8/12 mx-auto">
           <div class="text-center sm-tablet:py-2 sm-tablet:px-3 md:py-3 md:px-6 cursor-pointer border border-midnight-blue hover:border-paper-white hover:shadow-xl">
             <i class="fa-solid fa-house text-lg sm:text-xl md:text-3xl xl:text-5xl"></i>
             <p class="xl:text-2xl">living</p>
@@ -197,7 +196,7 @@
 
       <div class="mt-5 flex h-7 items-center justify-center bg-midnight-gray"></div>
 
-      <section id="listings" class="w-10/12 place-self-center mt-5 sm:w-76 md:grid md:grid-cols-2 md:gap-5 xl:grid-cols-3"></section>
+      <section id="listings" class="w-11/12 lg:w-8/12 place-self-center mt-5 md:grid md:grid-cols-2 md:gap-5 xl:grid-cols-3"></section>
     </main>
     <!-- end of main  -->
 
@@ -217,12 +216,12 @@
       <form class="md:flex md:flex-col md:place-self-end">
         <span class="footer-title md:text-base lg:text-lg">Contact</span>
         <label>
-          <input class="py-1 px-1 rounded md:w-80 md:text-base lg:text-lg" type="email" placeholder="email" />
+          <input class="py-1 px-1 w-56 rounded md:w-80 md:text-base lg:text-lg" type="email" placeholder="email" />
         </label>
         <label>
-          <input class="py-1 px-1 rounded md:w-80 md:text-base lg:text-lg" type="text" placeholder="subject" />
+          <input class="py-1 px-1 w-56 rounded md:w-80 md:text-base lg:text-lg" type="text" placeholder="subject" />
         </label>
-        <textarea class="w-49 rounded md:w-80 md:text-base lg:text-lg" style="resize: none" placeholder="message"></textarea>
+        <textarea class="w-56 rounded md:w-80 md:text-base lg:text-lg" style="resize: none" placeholder="message"></textarea>
         <button class="rounded bg-sky-blue py-1 px-2 md:place-self-end">Submit</button>
       </form>
     </footer>
