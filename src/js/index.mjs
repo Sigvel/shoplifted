@@ -9,6 +9,7 @@ import { create, showCreateForm } from "./api/posts/handlers/createListing.mjs";
 import { addUrl } from "./api/posts/handlers/addUrl.mjs";
 import { apiUrl, listings } from "./api/constants.mjs";
 import { makeBid } from "./api/posts/handlers/makeBid.mjs";
+import { searchSetup } from "./handlers/search.mjs";
 
 // all pages
 showCreateForm();
@@ -39,6 +40,10 @@ if (location.pathname === "/pages/details/index.html") {
   fetchListing(`${apiUrl}${listings}/${listingId}?_seller=true&_bids=true`);
 
   makeBid();
+}
+
+if (location.pathname === "/pages/listing/index.html") {
+  searchSetup();
 }
 
 // Login & register

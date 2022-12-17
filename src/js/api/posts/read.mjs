@@ -8,7 +8,7 @@ import { listingBids } from "./templates/bid.mjs";
  */
 const listingsContainer = document.getElementById("listings");
 
-export let listingsArray = [];
+export let listingArray = [];
 
 export async function fetchListings() {
   try {
@@ -16,12 +16,12 @@ export async function fetchListings() {
     const json = await response.json();
 
     if (response.ok) {
-      listingsArray = json;
+      listingArray = json;
       if (location.pathname === "/index.html") {
         createSliderPosts(json);
         console.log(json);
       } else if (location.pathname === "/pages/listing/index.html") {
-        createListings();
+        createListings(json);
       }
     } else {
       throw new Error(response.statusText);
@@ -31,13 +31,15 @@ export async function fetchListings() {
   }
 }
 
-const createListings = () => {
-  listingsArray.map((listings) => {
+const createListings = (array) => {
+  listingArray = array.map((listings) => {
     const card = create.card();
 
     card.append(create.listingsContent(listings));
 
     listingsContainer.appendChild(card);
+
+    return { title: listings.title, description: listings.description, element: card };
   });
 };
 
