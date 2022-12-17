@@ -62,12 +62,18 @@ const listingSection = document.getElementById("listing");
 // Other html elements
 const seller = document.getElementById("seller");
 const sellerImg = document.getElementById("seller-img");
+const headings = document.querySelector(".product-heading");
+const pageHeader = document.getElementById("page-header");
 
 const bidsSection = document.getElementById("listing-bids");
 
 // const listingBids = document.getElementById("listing-bids");
 
 const createListing = (listing) => {
+  document.body.title = `Shoplifted | ${listing.title}`;
+  headings.innerHTML = `Shoplifted ${listing.title}`;
+  pageHeader.innerHTML = `Shoplifted ${listing.title}`;
+
   const bids = listing.bids.sort((a, b) => {
     if (a.created.toLowerCase() < b.created.toLowerCase()) return 1;
     return -1;
