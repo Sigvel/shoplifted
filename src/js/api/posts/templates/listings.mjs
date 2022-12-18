@@ -159,7 +159,6 @@ export const bids = (bid) => {
   currentBid.className = "rounded bg-midnight-gray py-1 px-2 text-xs md:text-sm font-bold text-golden-brown";
   currentBid.textContent = `Curr bid: ${bidAmount}`;
 
-  // latest bid object (is currently number of bids)
   const bids = document.createElement("p");
   bids.className = "rounded bg-midnight-gray py-1 px-2 text-xs md:text-sm font-bold text-golden-brown";
   bids.textContent = `bids: ${bid.length}`;
@@ -219,8 +218,6 @@ export const slideBtnLeft = () => {
 };
 
 export const sliderImgs = (imgs) => {
-  // images need a dataset data-index using map index ISH DONE
-  // images needs a dataset.status DONE
   const container = sliderContainer();
 
   imgs.forEach((img, index) => {

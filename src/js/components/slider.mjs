@@ -44,12 +44,12 @@ export const slideLeft = () => {
 const cardSlider = document.getElementById("card-slider");
 
 /**
- *
- * @param {*} response
+ * creates the slider for the homepage with listings
+ * @param {Array} response holds the value from the api fetch
+ * @returns slider html object
  */
 export const createSliderPosts = (response) => {
   response.map((listing, index) => {
-    // card
     const card = create.sliderCard();
 
     if (index === 0) {
