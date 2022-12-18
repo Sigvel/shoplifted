@@ -119,12 +119,6 @@
       <!-- Page head text and filter dropdown -->
       <div class="mt-10 flex justify-between w-11/12 lg:w-8/12 mx-auto">
         <h2 class="text-center text-lg font-bold md:text-2xl">Listings</h2>
-        <select class="rounded border border-paper-white bg-midnight-blue md:w-24 md:text-xl cursor-pointer">
-          <option selected>default</option>
-          <option value="newFirst">new - old</option>
-          <option value="title-az ">title a-z</option>
-          <option value="title-za">title z-a</option>
-        </select>
       </div>
 
       <!-- Create post dropdown -->
@@ -167,36 +161,10 @@
         <!-- end of create listing form -->
       </section>
 
-      <form id="search" class="mt-5 mb-5 w-11/12 lg:w-8/12 mx-auto flex justify-center">
+      <form id="search" class="mt-5 w-11/12 lg:w-8/12 mx-auto flex justify-center">
         <label for="searchInput" id="searchInput"></label>
         <input required minlength="2" name="searchInput" class="text-midnight-gray rounded text-lg py-2 pl-1 w-full" type="text" placeholder="Search listings" />
       </form>
-
-      <!-- categories -->
-      <section class="mt-5 xl:mt-20">
-        <div class="categories flex justify-evenly gap-1 md:gap-1 flex-wrap md:w-11/12 lg:w-8/12 mx-auto">
-          <div class="text-center sm-tablet:py-2 sm-tablet:px-3 md:py-3 md:px-6 cursor-pointer border border-midnight-blue hover:border-paper-white hover:shadow-xl">
-            <i class="fa-solid fa-house text-lg sm:text-xl md:text-3xl xl:text-5xl"></i>
-            <p class="xl:text-2xl">living</p>
-          </div>
-          <div class="text-center sm-tablet:py-2 sm-tablet:px-3 md:py-3 md:px-6 cursor-pointer border border-midnight-blue hover:border-paper-white hover:shadow-xl">
-            <i class="fa-solid fa-car text-lg sm:text-xl md:text-3xl xl:text-5xl"></i>
-            <p class="xl:text-2xl">cars</p>
-          </div>
-          <div class="text-center sm-tablet:py-2 sm-tablet:px-3 md:py-3 md:px-6 cursor-pointer border border-midnight-blue hover:border-paper-white hover:shadow-xl">
-            <i class="fa-solid fa-motorcycle text-lg sm:text-xl md:text-3xl xl:text-5xl"></i>
-            <p class="xl:text-2xl">mc</p>
-          </div>
-          <div class="text-center sm-tablet:py-2 sm-tablet:px-3 md:py-3 md:px-6 cursor-pointer border border-midnight-blue hover:border-paper-white hover:shadow-xl">
-            <i class="fa-solid fa-shop text-lg sm:text-xl md:text-3xl xl:text-5xl"></i>
-            <p class="xl:text-2xl">market</p>
-          </div>
-          <div class="text-center sm-tablet:py-2 sm-tablet:px-3 md:py-3 md:px-6 cursor-pointer border border-midnight-blue hover:border-paper-white hover:shadow-xl">
-            <i class="fa-solid fa-microchip text-lg sm:text-xl md:text-3xl xl:text-5xl"></i>
-            <p class="xl:text-2xl">tech</p>
-          </div>
-        </div>
-      </section>
 
       <div class="mt-5 flex h-7 items-center justify-center bg-midnight-gray"></div>
 
