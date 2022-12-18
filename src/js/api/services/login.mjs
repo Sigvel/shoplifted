@@ -21,6 +21,10 @@ export async function loginUser(userData) {
       save("token", accessToken);
       save("user", user);
       errorMessage("Login successful", true);
+
+      setTimeout(() => {
+        location.reload();
+      }, 1300);
     }
 
     errorMessage(user.errors[0].message, false);
