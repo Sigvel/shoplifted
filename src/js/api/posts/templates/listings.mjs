@@ -30,7 +30,7 @@ export const imageHtml = (media) => {
   const figureBox = document.createElement("figure");
   figureBox.className = "bg-paper-white";
   const img = document.createElement("img");
-  img.className = "corner h-full w-full object-cover md:max-h-36 lg:max-h-56 xl:max-h-40 shadow-lg";
+  img.className = "corner h-full w-full object-cover md:max-h-36 lg:max-h-54 xl:max-h-38 shadow-lg";
   img.src = image;
   img.onerror = `src="/assets/images/placeholder/Item-placeholder.jpg"`;
 
