@@ -18,6 +18,9 @@ export async function registerUser(userData) {
 
     if (response.ok) {
       errorMessage("Account registered", true);
+      setTimeout(() => {
+        location.reload();
+      }, 1500);
       return await response.json();
     }
 
