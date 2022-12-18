@@ -263,8 +263,6 @@ export const slideBtnRight = () => {
 };
 
 export const listing = (listing) => {
-  console.log(listing);
-
   listingEndsAt(listing.endsAt);
 
   const cardImgs = document.createElement("div");
