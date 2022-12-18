@@ -1,3 +1,5 @@
+import { errorMessage } from "../../../components/errorMsg.mjs";
+import { checkUserAuth } from "../../auth/checkAuth.mjs";
 import { createListing } from "../create.mjs";
 
 export const showFormBtn = document.getElementById("create-listing_btn");
@@ -18,36 +20,40 @@ export const showCreateForm = () => {
 export const listingForm = document.getElementById("listing-form");
 
 export const create = () => {
-  listingForm.addEventListener("submit", (e) => {
-    e.preventDefault();
+  if (checkUserAuth() === null) {
+    listingForm.innerHTML = errorMessage("Must be logged in to make a listing", false);
+  } else {
+    listingForm.addEventListener("submit", (e) => {
+      e.preventDefault();
 
-    const imgs = document.querySelectorAll(`[data-type="url"]`);
-    let media = [];
+      const imgs = document.querySelectorAll(`[data-type="url"]`);
+      let media = [];
 
-    const form = e.target;
-    const data = new FormData(form);
-    const userData = Object.fromEntries(data.entries());
+      const form = e.target;
+      const data = new FormData(form);
+      const userData = Object.fromEntries(data.entries());
 
-    imgs.forEach((input) => {
-      if (input.value !== "") {
-        media.push(input.value);
+      imgs.forEach((input) => {
+        if (input.value !== "") {
+          media.push(input.value);
+        }
+      });
+
+      const tags = userData.tags.replace(/\s+/g, "").split(",");
+
+      let dataObject = {
+        title: userData.title,
+        description: userData.description,
+        tags: tags,
+        endsAt: userData.endsAt,
+        media: media,
+      };
+
+      if (!media || media === "" || media === []) {
+        delete dataObject.media;
       }
+
+      createListing(dataObject);
     });
-
-    const tags = userData.tags.replace(/\s+/g, "").split(",");
-
-    let dataObject = {
-      title: userData.title,
-      description: userData.description,
-      tags: tags,
-      endsAt: userData.endsAt,
-      media: media,
-    };
-
-    if (!media || media === "" || media === []) {
-      delete dataObject.media;
-    }
-
-    createListing(dataObject);
-  });
+  }
 };
