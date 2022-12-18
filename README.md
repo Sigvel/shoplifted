@@ -70,7 +70,7 @@ If you want to know more about forking, pull requests and contributing to a proj
 
 ## Contact
 
-If you would like to get in contact, please feel free to contact me through these methods:
+If you would like to get in contact, please feel free to contact me through linkedIn:
 [My LinkedIn page](https://www.linkedin.com/in/tony-sigvel/)
  
 
