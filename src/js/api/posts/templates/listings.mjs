@@ -171,13 +171,18 @@ export const bids = (bid) => {
   return bidsWrapper;
 };
 
+/**
+ * creates listings
+ * @param {array} listings contains response from api
+ * @returns constricted html node of listing elements
+ */
 export const listingsContent = (listings) => {
   /**
    * content to hold everything together
    */
   const contentAnchor = document.createElement("a");
   contentAnchor.className = "cursor-pointer";
-  contentAnchor.href = `/pages/details/index.html?id="${listings.id}"`;
+  contentAnchor.href = `/pages/details/index.html?id=${listings.id}`;
   /**
    * about listing container
    */
