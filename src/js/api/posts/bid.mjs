@@ -24,8 +24,6 @@ export async function createBid(data) {
     const json = await response.json();
 
     if (response.ok) {
-      console.log(json);
-      console.log(response);
       errorContainer.innerHTML = errorMessage("success", true);
 
       setTimeout(() => {
