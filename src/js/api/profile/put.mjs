@@ -1,13 +1,9 @@
-import { errorMessage, feedback } from "../../components/errorMsg.mjs";
-// import { header } from "../auth/header.mjs";
+import { errorMessage } from "../../components/errorMsg.mjs";
 import { apiUrl, MEDIA_update } from "../constants.mjs";
 import { profileForm } from "./handlers/edit.mjs";
 import { load } from "../storage/load.mjs";
 
-// headers: {
-//     Authorization: `Bearer ${load("token")}`,
-//     "Content-Type": "application/json; charset=utf-8",
-//   },
+const editFeedback = document.querySelector(".edit-feedback");
 
 export async function editProfile(data) {
   const body = JSON.stringify(data);
@@ -24,11 +20,13 @@ export async function editProfile(data) {
     const json = await response.json();
 
     if (response.ok) {
-      console.log(response.json());
-      feedback.innerHTML = errorMessage("success", true);
+      editFeedback.innerHTML = errorMessage("success", true);
+      setTimeout(() => {
+        location.reload();
+      }, 1500);
+    } else {
+      editFeedback.innerHTML = errorMessage(json.errors[0].message, false);
     }
-
-    feedback.innerHTML = errorMessage(json.errors[0].message, false);
   } catch (error) {
     console.log(error);
   } finally {
