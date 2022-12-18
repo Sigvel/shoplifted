@@ -1,7 +1,6 @@
 import { apiUrl, listings } from "../constants.mjs";
 import { load } from "../storage/load.mjs";
 import { errorMessage } from "../../components/errorMsg.mjs";
-// import { listingForm } from "./handlers/createListing.mjs";
 
 const errorContainer = document.querySelector(".errorBox");
 
