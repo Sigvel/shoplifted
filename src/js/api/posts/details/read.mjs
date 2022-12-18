@@ -1,3 +1,5 @@
+import { errorMessage } from "../../../components/errorMsg.mjs";
+import { checkUserAuth } from "../../auth/checkAuth.mjs";
 import { listingBids } from "../templates/bid.mjs";
 import * as create from "../templates/listings.mjs";
 
@@ -34,14 +36,18 @@ const createListing = (listing) => {
   headings.innerHTML = `Shoplifted ${listing.title}`;
   pageHeader.innerHTML = `Shoplifted ${listing.title}`;
 
-  const bids = listing.bids.sort((a, b) => {
-    if (a.created.toLowerCase() < b.created.toLowerCase()) return 1;
-    return -1;
-  });
+  if (checkUserAuth() === null) {
+    bidsSection.innerHTML = errorMessage("must be logged inn to see bid history", false);
+  } else {
+    const bids = listing.bids.sort((a, b) => {
+      if (a.created.toLowerCase() < b.created.toLowerCase()) return 1;
+      return -1;
+    });
 
-  bids.forEach((bid) => {
-    bidsSection.append(listingBids(bid));
-  });
+    bids.forEach((bid) => {
+      bidsSection.append(listingBids(bid));
+    });
+  }
 
   seller.innerHTML = listing.seller.name;
   sellerImg.src = listing.seller.avatar;
