@@ -54,7 +54,7 @@ const contentHeader = (title) => {
  */
 const description = (info) => {
   const paragraph = document.createElement("p");
-  paragraph.className = "mt-1 text-xs md:text-sm";
+  paragraph.className = "mt-1 text-xs md:text-sm truncate";
   paragraph.textContent = info;
 
   return paragraph;
