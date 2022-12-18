@@ -1,4 +1,5 @@
-import { fetchListings, fetchListing } from "./api/posts/read.mjs";
+import { fetchListings } from "./api/posts/read.mjs";
+import { fetchListing } from "./api/posts/details/read.mjs";
 import { menu, hamburgerMenu } from "./components/hamburger.mjs";
 import { slideLeftBtn, slideLeft, slideRightBtn, slideRight } from "./components/slider.mjs";
 import { register } from "./api/services/handlers/register.mjs";
@@ -20,38 +21,30 @@ create();
 
 hamburgerMenu.addEventListener("click", menu);
 
-// FETCH POSTS
-
-// homepage, listings page
-fetchListings();
-
 // profile
 fetchProfile();
+
+// Login & register
+register();
+login();
 
 if (location.pathname === "/pages/profile/index.html") {
   // Profile handlers
   edit();
-}
-
-if (location.pathname === "/pages/details/index.html") {
+} else if (location.pathname === "/pages/details/index.html") {
   const url = new URL(location.href);
   const listingId = url.searchParams.get("id");
 
   fetchListing(`${apiUrl}${listings}/${listingId}?_seller=true&_bids=true`);
 
   makeBid();
-}
-
-if (location.pathname === "/pages/listing/index.html") {
+} else if (location.pathname === "/pages/listing/index.html") {
   searchSetup();
-}
 
-// Login & register
-register();
-login();
-
-// routers
-if (location.pathname === "/index.html") {
+  // homepage, listings page
+  fetchListings();
+} else if (location.pathname === "/index.html") {
+  fetchListings();
   // slider button listeners
   slideRightBtn.addEventListener("click", slideRight);
 
