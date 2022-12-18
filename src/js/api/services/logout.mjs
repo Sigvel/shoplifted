@@ -11,6 +11,9 @@ export const isLoggedIn = () => {
     profileLink.removeAttribute("href");
     profileLinkLabel.setAttribute("for", "login-modal");
     loginLabel.setAttribute("for", "login-modal");
+    if (location.pathname === "/pages/profile/index.html") {
+      location.replace("/index.html");
+    }
     return;
   }
   loginLabel.removeAttribute("for", "login-modal");
