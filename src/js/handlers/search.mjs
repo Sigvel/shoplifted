@@ -9,8 +9,6 @@ export const searchSetup = () => {
     const form = e.target;
     const term = form.value;
 
-    // window.location.replace(`/pages/listing/index.html`);
-
     search(term.toLowerCase());
   });
 };
