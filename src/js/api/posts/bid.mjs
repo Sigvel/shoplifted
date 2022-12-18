@@ -28,7 +28,7 @@ export async function createBid(data) {
 
       setTimeout(() => {
         location.reload();
-      }, 1300);
+      }, 500);
     }
 
     errorContainer.innerHTML = errorMessage(json.errors[0].message, false);
