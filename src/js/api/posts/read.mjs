@@ -1,3 +1,4 @@
+import { errorMessage } from "../../components/errorMsg.mjs";
 import { apiUrl, listings } from "../constants.mjs";
 import * as create from "./templates/listings.mjs";
 import { createSliderPosts } from "/src/js/components/slider.mjs";
@@ -22,6 +23,7 @@ export async function fetchListings() {
         createListings(json);
       }
     } else {
+      listingsContainer.innerHTML = errorMessage(response.statusText, false);
       throw new Error(response.statusText);
     }
   } catch (error) {

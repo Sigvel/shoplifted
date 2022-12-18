@@ -1,5 +1,5 @@
 import { apiUrl, REG_URL } from "../constants.mjs";
-import { errorMessage } from "../../components/errorMsg.mjs";
+import { errorMessage, feedback } from "../../components/errorMsg.mjs";
 import { registerForm } from "../services/handlers/register.mjs";
 
 export async function registerUser(userData) {
@@ -17,7 +17,7 @@ export async function registerUser(userData) {
     const json = await response.json();
 
     if (response.ok) {
-      errorMessage("Account registered", true);
+      feedback.innerHTML = errorMessage("Account registered", true);
       setTimeout(() => {
         location.reload();
       }, 1500);
@@ -30,7 +30,7 @@ export async function registerUser(userData) {
 
     console.log(json.errors[0].message);
 
-    errorMessage(json.errors[0].message, false);
+    feedback.innerHTML = errorMessage(json.errors[0].message, false);
     throw new Error(await response.statusText);
   } catch (error) {
     console.log(error);

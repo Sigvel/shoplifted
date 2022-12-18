@@ -1,5 +1,5 @@
 import { apiUrl, LOGIN_URL } from "../constants.mjs";
-import { errorMessage } from "../../components/errorMsg.mjs";
+import { errorMessage, feedback } from "../../components/errorMsg.mjs";
 import { loginForm } from "./handlers/login.mjs";
 import { save } from "../storage/save.mjs";
 
@@ -20,14 +20,14 @@ export async function loginUser(userData) {
     if (response.ok) {
       save("token", accessToken);
       save("user", user);
-      errorMessage("Login successful", true);
+      feedback.innerHTML = errorMessage("Login successful", true);
 
       setTimeout(() => {
         location.reload();
       }, 1300);
     }
 
-    errorMessage(user.errors[0].message, false);
+    feedback.innerHTML = errorMessage(user.errors[0].message, false);
 
     throw new Error(await response.statusText);
   } catch (error) {
