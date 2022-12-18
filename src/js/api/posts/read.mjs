@@ -18,7 +18,6 @@ export async function fetchListings() {
       listingArray = json;
       if (location.pathname === "/index.html") {
         createSliderPosts(json);
-        console.log(json);
       } else if (location.pathname === "/pages/listing/index.html") {
         createListings(json);
       }
