@@ -1,5 +1,6 @@
 import { apiUrl, profileUrl } from "../constants.mjs";
 import { options } from "../auth/header.mjs";
+import { checkUserAuth } from "../auth/checkAuth.mjs";
 
 // HTML targets
 const usersListings = document.getElementById("listings");
@@ -8,22 +9,27 @@ const userName = document.getElementById("username");
 const profileMedia = document.getElementById("profileImg");
 
 export async function fetchProfile() {
-  try {
-    const response = await fetch(`${apiUrl}${profileUrl}`, options);
-    const json = await response.json();
+  if (checkUserAuth() !== null) {
+    try {
+      const response = await fetch(`${apiUrl}${profileUrl}`, options);
+      const json = await response.json();
 
-    if (location.pathname === "/pages/profile/index.html") {
-      buildProfile(json);
-      checkCredits(json.credits);
-    } else {
-      checkCredits(json.credits);
+      if (location.pathname === "/pages/profile/index.html") {
+        buildProfile(json);
+        checkCredits(json.credits);
+      } else {
+        checkCredits(json.credits);
+      }
+    } catch (error) {
+      console.log(error);
     }
-  } catch (error) {
-    console.log(error);
+    return;
   }
+  return;
 }
 
-export let userCredits;
+export let userCredits = "none";
+
 export const holdings = document.querySelectorAll(".curr-holdings");
 
 export const checkCredits = (userCredits) => {
