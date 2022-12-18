@@ -104,7 +104,7 @@
           </li>
         </ul>
         <div class="flex justify-center">
-          <a href="./pages/listing/index.html" class="rounded bg-sky-blue py-1 px-7 mb-3 mt-2 md:py-1 md:px-2 md:mb-2 md:mt-2">
+          <a href="./pages/listing/index.html" class="rounded bg-sky-blue py-1 px-7 mb-3 mt-2 md:py-1 md:px-2 md:mb-2 md:mt-2 cursor-pointer">
             <i class="fa-solid fa-magnifying-glass"></i>
           </a>
         </div>
@@ -164,9 +164,9 @@
       <!-- <h2 class="mt-10 text-center text-lg font-bold md:text-2xl">recent listings</h2> -->
 
       <!-- carousel  -->
-      <section class="slider-section h-60 xl:h-96 w-2/3 xl:w-8/12 sm-tablet:w-3/4 mx-auto relative sm-tablet:h-72 mt-3">
-        <div class="bg-midnight-blue z-49 absolute top-1/3 md:top-2/4 translate-y-minus-50p bg-transparent left-sml-btn-l">
-          <button type="button" id="slide-left" class="w-12 h-16">
+      <section class="slider-section h-60 w-8/12 md:w-4/5 xl:h-96 lg:w-8/12 sm-tablet:w-3/4 mx-auto relative sm-tablet:h-72 mt-3">
+        <div class="bg-midnight-blue z-49 absolute top-1/3 md:top-2/4 translate-y-minus-50p bg-transparent left-sml-btn md:left-med-btn">
+          <button type="button" id="slide-left" class="w-10 h-16">
             <i class="fa-solid fa-angle-left text-2xl md:text-4xl"></i>
           </button>
         </div>
@@ -175,65 +175,58 @@
           <!-- carousel_track -->
           <div id="card-slider" class="p-0 m-0"></div>
         </div>
-        <div class="bg-midnight-blue z-49 absolute top-1/3 md:top-2/4 translate-y-minus-50p bg-transparent right-sml-btn-r">
-          <button type="button" id="slide-right" class="w-12 h-16">
+        <div class="bg-midnight-blue z-49 absolute top-1/3 md:top-2/4 translate-y-minus-50p bg-transparent right-sml-btn md:right-med-btn">
+          <button type="button" id="slide-right" class="w-10 h-16">
             <i class="fa-solid fa-angle-right text-2xl md:text-4xl"></i>
           </button>
         </div>
       </section>
 
-      <!-- categories -->
-      <section class="mt-20 sm:mt-32 md:mt-48 xl:mt-64">
-        <div class="categories flex justify-evenly gap-1 md:gap-px flex-wrap">
-          <div class="text-center sm-tablet:py-2 sm-tablet:px-3 md:py-3 md:px-6 cursor-pointer border border-midnight-blue hover:border-paper-white hover:shadow-xl">
-            <i class="fa-solid fa-house text-lg sm:text-xl md:text-3xl xl:text-5xl"></i>
-            <p class="xl:text-2xl">living</p>
-          </div>
-          <div class="text-center sm-tablet:py-2 sm-tablet:px-3 md:py-3 md:px-6 cursor-pointer border border-midnight-blue hover:border-paper-white hover:shadow-xl">
-            <i class="fa-solid fa-car text-lg sm:text-xl md:text-3xl xl:text-5xl"></i>
-            <p class="xl:text-2xl">cars</p>
-          </div>
-          <div class="text-center sm-tablet:py-2 sm-tablet:px-3 md:py-3 md:px-6 cursor-pointer border border-midnight-blue hover:border-paper-white hover:shadow-xl">
-            <i class="fa-solid fa-motorcycle text-lg sm:text-xl md:text-3xl xl:text-5xl"></i>
-            <p class="xl:text-2xl">mc</p>
-          </div>
-          <div class="text-center sm-tablet:py-2 sm-tablet:px-3 md:py-3 md:px-6 cursor-pointer border border-midnight-blue hover:border-paper-white hover:shadow-xl">
-            <i class="fa-solid fa-shop text-lg sm:text-xl md:text-3xl xl:text-5xl"></i>
-            <p class="xl:text-2xl">market</p>
-          </div>
-          <div class="text-center sm-tablet:py-2 sm-tablet:px-3 md:py-3 md:px-6 cursor-pointer border border-midnight-blue hover:border-paper-white hover:shadow-xl">
-            <i class="fa-solid fa-microchip text-lg sm:text-xl md:text-3xl xl:text-5xl"></i>
-            <p class="xl:text-2xl">tech</p>
+      <section id="about-section" class="mt-20 sm:mt-32 md:mt-48 xl:mt-64">
+        <div class="w-11/12 lg:w-8/12 mx-auto bg-midnight-gray px-2 py-5 rounded">
+          <h2 class="text-xl font-bold text-center mb-4 md:text-2xl">What this webpage is about ?</h2>
+          <div class="flex flex-col sm-tablet:px-5 md:px-10">
+            <p class="text-center text-sm font-bold mb-2 md:text-base lg:text-lg">Make a search in our black market listings or create a listing</p>
+            <div class="flex justify-center">
+              <a href="./pages/listing/index.html" class="text-center rounded bg-sky-blue py-1 px-7 mb-3 mt-2 md:py-2 md:px-10 font-bold cursor-pointer">Search</a>
+            </div>
+            <p class="text-center text-sm mb-2 md:text-base lg:text-lg">
+              Anyhow on this website you will find a variety of goods that is stolen, not stolen. Hey we sell everything except if its a human being
+            </p>
+            <p class="text-center text-sm md:text-base lg:text-lg">Are you looking for your grandmothers stolen purse, your stolen car, maybe your dignity.</p>
+            <p class="text-center font-bold mt-1 md:text-base lg:text-lg">BE SURE WE GOT IT !</p>
           </div>
         </div>
       </section>
     </main>
     <!-- end of main  -->
 
-    <footer class="footer bg-midnight-gray p-10 text-neutral-content mb-0">
-      <div>
-        <span class="footer-title md:text-base lg:text-lg">Services</span>
-        <a class="link-hover link md:text-base lg:text-lg">Tailwind css</a>
-        <a class="link-hover link md:text-base lg:text-lg">Adobe XD</a>
-        <a class="link-hover link md:text-base lg:text-lg">Noroff Auction API</a>
+    <footer class="bg-midnight-gray py-8">
+      <div class="footer text-neutral-content w-11/12 lg:w-8/12 mx-auto">
+        <div>
+          <span class="footer-title md:text-base lg:text-lg">Services</span>
+          <a target="_blank" href="https://tailwindcss.com/" class="hover:text-sky-blue link md:text-base lg:text-lg">Tailwind css</a>
+          <a target="_blank" href="https://helpx.adobe.com/xd/get-started.html" class="hover:text-sky-blue link md:text-base lg:text-lg">Adobe XD</a>
+          <a target="_blank" href="https://docs.noroff.dev/" class="hover:text-sky-blue link md:text-base lg:text-lg">Noroff Auction API</a>
+        </div>
+        <div>
+          <span class="footer-title md:text-base lg:text-lg">Company</span>
+          <a target="_blank" href="https://github.com/Sigvel hover:text-sky-blue" class="hover:text-sky-blue link md:text-base lg:text-lg">Github Profile</a>
+          <a class="link-hover link md:text-base lg:text-lg">example@gmail.com</a>
+          <a class="link-hover link md:text-base lg:text-lg">+47 93746890</a>
+        </div>
+        <form class="md:flex md:flex-col md:place-self-end">
+          <span class="footer-title md:text-base lg:text-lg">Contact</span>
+          <label>
+            <input class="py-1 px-1 w-56 rounded md:w-80 md:text-base lg:text-lg" type="email" placeholder="email" />
+          </label>
+          <label>
+            <input class="py-1 px-1 w-56 rounded md:w-80 md:text-base lg:text-lg" type="text" placeholder="subject" />
+          </label>
+          <textarea class="w-56 rounded md:w-80 md:text-base lg:text-lg" style="resize: none" placeholder="message"></textarea>
+          <button class="rounded bg-sky-blue py-1 px-2 md:place-self-end">Submit</button>
+        </form>
       </div>
-      <div>
-        <span class="footer-title md:text-base lg:text-lg">Company</span>
-        <a class="link-hover link md:text-base lg:text-lg">Github Profile</a>
-        <a class="link-hover link md:text-base lg:text-lg">example@gmail.com</a>
-        <a class="link-hover link md:text-base lg:text-lg">+47 93746890</a>
-      </div>
-      <form class="md:flex md:flex-col md:place-self-end">
-        <span class="footer-title md:text-base lg:text-lg">Contact</span>
-        <label>
-          <input class="py-1 px-1 w-56 rounded md:w-80 md:text-base lg:text-lg" type="email" placeholder="email" />
-        </label>
-        <label>
-          <input class="py-1 px-1 w-56 rounded md:w-80 md:text-base lg:text-lg" type="text" placeholder="subject" />
-        </label>
-        <textarea class="w-56 rounded md:w-80 md:text-base lg:text-lg" style="resize: none" placeholder="message"></textarea>
-        <button class="rounded bg-sky-blue py-1 px-2 md:place-self-end">Submit</button>
-      </form>
     </footer>
   </body>
 </html>
