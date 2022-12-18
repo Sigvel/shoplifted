@@ -1,4 +1,4 @@
-export const feedback = document.querySelectorAll(".feedback-msg");
+export const feedback = document.querySelector(".feedback-msg");
 
 export function errorMessage(message, status) {
   let bgColor = "bg-error";
