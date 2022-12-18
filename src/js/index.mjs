@@ -11,8 +11,11 @@ import { addUrl } from "./api/posts/handlers/addUrl.mjs";
 import { apiUrl, listings } from "./api/constants.mjs";
 import { makeBid } from "./api/posts/handlers/makeBid.mjs";
 import { searchSetup } from "./handlers/search.mjs";
+import { isLoggedIn } from "./api/services/logout.mjs";
 
 // all pages
+isLoggedIn();
+
 showCreateForm();
 
 addUrl();
