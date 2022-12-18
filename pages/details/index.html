@@ -4,10 +4,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="./dist/output.css" rel="stylesheet" />
+    <link href="/dist/output.css" rel="stylesheet" />
     <script src="https://kit.fontawesome.com/d527618ed6.js" crossorigin="anonymous"></script>
-    <script src="./src/js/index.mjs" type="module" defer></script>
-    <title>Shoplifted | homepage</title>
+    <script src="/src/js/index.mjs" type="module" defer></script>
+    <!-- Add the products name here  -->
+    <title></title>
   </head>
 
   <!-- start of login modal  -->
@@ -88,95 +89,114 @@
       <div class="cursor mt-2 mb-2 flex justify-center text-3xl cursor-pointer md:hidden" id="mobile-menu">
         <i class="fa-solid fa-bars"></i>
       </div>
-
-      <nav id="nav-items" class="mt-3 md:mt-0 hidden md:flex md:justify-between md:ml-1 md:bg-midnight-gray">
-        <ul class="flex flex-col md:flex-row place-items-center gap-3 md:ml-3 uppercase">
-          <li class="border-yellow-700 flex gap-32 md:gap-10 rounded border px-2 py-1 font-semibold text-golden-brown">
-            <p class="">Currency:</p>
-            <p class="curr-holdings">1000</p>
+      <nav id="nav-items" class="mt-3 md:mt-0 hidden md:w-11/12 lg:w-8/12 md:flex md:justify-between md:mx-auto md:bg-midnight-gray">
+        <ul class="flex flex-col md:flex-row place-items-center gap-3 uppercase">
+          <li class="border-yellow-700 flex gap-28 md:gap-7 md:text-sm rounded border px-2 py-1 font-semibold text-golden-brown">
+            <p>Currency:</p>
+            <p class="curr-holdings"></p>
           </li>
-          <li class="hover:text-sky-blue cursor-pointer">home</li>
-          <li class="hover:text-sky-blue cursor-pointer">profile</li>
-          <li class="hover:text-sky-blue cursor-pointer">listings</li>
-          <li class="hover:text-sky-blue"><label class="cursor-pointer" for="login-modal">login</label></li>
+          <li class="hover:text-sky-blue cursor-pointer font-semibold md:text-sm"><a href="/index.html">home</a></li>
+          <li class="hover:text-sky-blue cursor-pointer font-semibold md:text-sm">
+            <label class="profile-label"><a class="profile-link" href="/pages/profile/index.html">profile</a></label>
+          </li>
+          <li class="hover:text-sky-blue cursor-pointer font-semibold md:text-sm"><a href="/pages/listing/index.html">listings</a></li>
+          <li class="hover:text-sky-blue font-semibold md:text-sm">
+            <label class="cursor-pointer font-semibold0" for="login-modal"><a class="loginBtn">login</a></label>
+          </li>
         </ul>
-        <form class="mt-3 mb-2 flex justify-center md:mr-4">
-          <label class="mr-2">
-            <input class="rounded py-1 pl-1" type="text" placeholder="Search listings" />
-          </label>
-          <button class="rounded bg-paper-white px-2 text-xl text-midnight-gray" type="button">
+        <div class="flex justify-center">
+          <a href="/pages/listing/index.html" class="rounded bg-sky-blue py-1 px-7 mb-3 mt-2 md:py-1 md:px-2 md:mb-2 md:mt-2">
             <i class="fa-solid fa-magnifying-glass"></i>
-          </button>
-        </form>
+          </a>
+        </div>
       </nav>
     </header>
     <!-- End of header  -->
 
     <!-- start of main  -->
     <main class="bg-midnight-blue pb-10 flex flex-col basis-full">
-      <h1>Shoplifted homepage</h1>
+      <!-- add the products name here -->
+      <h1 id="page-header"></h1>
 
       <!-- Page head text and filter dropdown -->
-      <div class="mt-10 flex justify-between px-4">
-        <h2 class="text-center text-lg font-bold md:text-2xl">Shoplifted</h2>
-        <select class="rounded border border-paper-white bg-midnight-blue md:w-24 md:text-xl cursor-pointer">
-          <option class="" selected>default</option>
-          <option class="" value="newFirst">new - old</option>
-          <option class="" value="title-az ">title a-z</option>
-          <option class="" value="title-za">title z-a</option>
-        </select>
+      <div class="mt-10 flex justify-start lg:justify-center w-11/12 lg:w-8/12 mx-auto">
+        <h2 class="product-heading text-center text-lg font-bold md:text-2xl"></h2>
       </div>
 
       <!-- Create post dropdown -->
-      <div class="create-dropdown mt-5 flex h-7 items-center justify-center bg-midnight-gray">
-        <i id="create-listing" class="cursor-pointer fa-solid fa-angle-down text-2xl md:text-3xl"></i>
-      </div>
-
-      <!-- <h2 class="mt-10 text-center text-lg font-bold md:text-2xl">recent listings</h2> -->
-
-      <!-- carousel  -->
-      <section class="slider-section h-60 xl:h-96 w-2/3 xl:w-8/12 sm-tablet:w-3/4 mx-auto relative sm-tablet:h-72 mt-3">
-        <div class="bg-midnight-blue z-49 absolute top-1/3 md:top-2/4 translate-y-minus-50p bg-transparent left-sml-btn-l">
-          <button type="button" id="slide-left" class="w-12 h-16">
-            <i class="fa-solid fa-angle-left text-2xl md:text-4xl"></i>
-          </button>
+      <section class="create-section bg-midnight-gray mt-5">
+        <div id="create-listing_btn" class="create-dropdown flex h-7 items-center justify-center bg-midnight-gray">
+          <i class="cursor-pointer fa-solid fa-angle-up text-2xl md:text-3xl"></i>
         </div>
-        <!-- Carousel track container -->
-        <div id="listing-container" class="slider-container h-full relative">
-          <!-- carousel_track -->
-          <div id="card-slider" class="p-0 m-0"></div>
+        <div id="create-listing" class="hidden">
+          <h2 class="text-center font-bold text-lg mt-3">Create listing</h2>
+
+          <!-- create listing form  -->
+          <form class="bg-midnight-gray pt-2 text-midnight-gray" id="listing-form">
+            <div class="flex justify-between mt-3 mb-2 w-11/12 lg:w-8/12 mx-auto">
+              <label for="title" class="">
+                <input name="title" class="py-1 px-1 rounded w-28 md:text-base" type="text" placeholder="title" minlength="2" />
+              </label>
+              <label for="tags">
+                <input name="tags" class="py-1 px-1 rounded w-28 md:text-base" type="text" placeholder="tags" minlength="2" />
+              </label>
+            </div>
+            <label for="description" class="flex justify-center mb-2">
+              <textarea name="description" class="rounded w-11/12 lg:w-8/12" rows="5" style="resize: none" placeholder="description"></textarea>
+            </label>
+            <label for="endsAt" class="flex justify-center">
+              <input name="endsAt" type="datetime-local" class="py-1 px-1 rounded w-11/12 lg:w-8/12 md:text-base mb-2" placeholder="due" />
+            </label>
+            <label for="media" class="flex flex-col items-center media-container">
+              <div class="flex w-11/12 lg:w-8/12 justify-between mb-3">
+                <input data-type="url" name="media" type="text" class="py-1 px-1 rounded w-11/12 lg:w-8/12 md:text-base" placeholder="media url" />
+                <button data-type="add-btn" type="button" class="text-paper-white rounded bg-sky-blue py-1 px-2 font-bold">+</button>
+              </div>
+            </label>
+            <div class="errorBox mb-2 w-11/12 lg:w-8/12 mx-auto"></div>
+            <div class="flex justify-between mb-2 w-11/12 lg:w-8/12 mx-auto">
+              <label class="text-paper-white rounded bg-sky-blue py-1 px-2">cancel</label>
+              <button type="submit" class="text-paper-white rounded bg-sky-blue py-1 px-2">accept</button>
+            </div>
+          </form>
         </div>
-        <div class="bg-midnight-blue z-49 absolute top-1/3 md:top-2/4 translate-y-minus-50p bg-transparent right-sml-btn-r">
-          <button type="button" id="slide-right" class="w-12 h-16">
-            <i class="fa-solid fa-angle-right text-2xl md:text-4xl"></i>
-          </button>
+        <!-- end of create listing form -->
+      </section>
+      <!-- Bidders information section  -->
+      <section>
+        <div class="bg-sky-blue flex rounded w-11/12 lg:w-8/12 mx-auto mt-5">
+          <figure class="ml-3 my-4 w-16 h-16 md:h-24 md:w-24">
+            <img id="seller-img" class="w-full h-full object-cover" onerror="src='/assets/images/placeholder/profile/avatar-g70ad01aee_640.png'" />
+          </figure>
+          <div class="ml-2 mt-3">
+            <p id="seller" class="font-bold"></p>
+            <p>Seller</p>
+          </div>
         </div>
       </section>
 
-      <!-- categories -->
-      <section class="mt-20 sm:mt-32 md:mt-48 xl:mt-64">
-        <div class="categories flex justify-evenly gap-1 md:gap-px flex-wrap">
-          <div class="text-center sm-tablet:py-2 sm-tablet:px-3 md:py-3 md:px-6 cursor-pointer border border-midnight-blue hover:border-paper-white hover:shadow-xl">
-            <i class="fa-solid fa-house text-lg sm:text-xl md:text-3xl xl:text-5xl"></i>
-            <p class="xl:text-2xl">living</p>
+      <section id="expireTimeSection"></section>
+
+      <div class="errorContainer mt-2 w-11/12 lg:w-8/12 mx-auto"></div>
+
+      <!-- specific listing section  -->
+      <section id="listing"></section>
+
+      <!-- Biddings section  -->
+      <section>
+        <form id="bid-form" class="flex justify-between w-11/12 lg:w-8/12 mx-auto mt-5 p-2 border border-paper-white rounded font-bold">
+          <div class="uppercase font-bold w-3/4 flex items-center justify-between p-1 border border-paper-white rounded">
+            <p>Bid:</p>
+            <label for="amount" id="amount"></label>
+            <input class="w-20 sm:w-44 bg-midnight-blue text-paper-white border border-paper-white rounded p-1" name="amount" type="number" placeholder="amount" />
           </div>
-          <div class="text-center sm-tablet:py-2 sm-tablet:px-3 md:py-3 md:px-6 cursor-pointer border border-midnight-blue hover:border-paper-white hover:shadow-xl">
-            <i class="fa-solid fa-car text-lg sm:text-xl md:text-3xl xl:text-5xl"></i>
-            <p class="xl:text-2xl">cars</p>
-          </div>
-          <div class="text-center sm-tablet:py-2 sm-tablet:px-3 md:py-3 md:px-6 cursor-pointer border border-midnight-blue hover:border-paper-white hover:shadow-xl">
-            <i class="fa-solid fa-motorcycle text-lg sm:text-xl md:text-3xl xl:text-5xl"></i>
-            <p class="xl:text-2xl">mc</p>
-          </div>
-          <div class="text-center sm-tablet:py-2 sm-tablet:px-3 md:py-3 md:px-6 cursor-pointer border border-midnight-blue hover:border-paper-white hover:shadow-xl">
-            <i class="fa-solid fa-shop text-lg sm:text-xl md:text-3xl xl:text-5xl"></i>
-            <p class="xl:text-2xl">market</p>
-          </div>
-          <div class="text-center sm-tablet:py-2 sm-tablet:px-3 md:py-3 md:px-6 cursor-pointer border border-midnight-blue hover:border-paper-white hover:shadow-xl">
-            <i class="fa-solid fa-microchip text-lg sm:text-xl md:text-3xl xl:text-5xl"></i>
-            <p class="xl:text-2xl">tech</p>
-          </div>
-        </div>
+          <button type="submit" class="rounded bg-sky-blue px-2 ml-2 uppercase">Place bid</button>
+        </form>
+        <h2 class="text-center font-bold text-lg mt-10">Bid history</h2>
+
+        <div class="bids-feedback"></div>
+
+        <div id="listing-bids"></div>
       </section>
     </main>
     <!-- end of main  -->
@@ -184,25 +204,25 @@
     <footer class="footer bg-midnight-gray p-10 text-neutral-content mb-0">
       <div>
         <span class="footer-title md:text-base lg:text-lg">Services</span>
-        <a class="link-hover link md:text-base lg:text-lg">Tailwindcss</a>
+        <a class="link-hover link md:text-base lg:text-lg">Tailwind css</a>
         <a class="link-hover link md:text-base lg:text-lg">Adobe XD</a>
-        <a class="link-hover link md:text-base lg:text-lg">Noroff API</a>
+        <a class="link-hover link md:text-base lg:text-lg">Noroff Auction API</a>
       </div>
       <div>
         <span class="footer-title md:text-base lg:text-lg">Company</span>
-        <a class="link-hover link md:text-base lg:text-lg">SigDev</a>
+        <a class="link-hover link md:text-base lg:text-lg">Github Profile</a>
         <a class="link-hover link md:text-base lg:text-lg">example@gmail.com</a>
         <a class="link-hover link md:text-base lg:text-lg">+47 93746890</a>
       </div>
-      <form class="md:flex md:flex-col md:place-self-center">
+      <form class="md:flex md:flex-col md:place-self-end">
         <span class="footer-title md:text-base lg:text-lg">Contact</span>
         <label>
-          <input class="py-1 px-1 rounded md:w-80 md:text-base lg:text-lg" type="email" placeholder="email" />
+          <input class="py-1 px-1 w-56 rounded md:w-80 md:text-base lg:text-lg" type="email" placeholder="email" />
         </label>
         <label>
-          <input class="py-1 px-1 rounded md:w-80 md:text-base lg:text-lg" type="text" placeholder="subject" />
+          <input class="py-1 px-1 w-56 rounded md:w-80 md:text-base lg:text-lg" type="text" placeholder="subject" />
         </label>
-        <textarea class="w-49 rounded md:w-80 md:text-base lg:text-lg" style="resize: none" placeholder="message"></textarea>
+        <textarea class="w-56 rounded md:w-80 md:text-base lg:text-lg" style="resize: none" placeholder="message"></textarea>
         <button class="rounded bg-sky-blue py-1 px-2 md:place-self-end">Submit</button>
       </form>
     </footer>

@@ -1,12 +1,12 @@
-// LISTING CARD
+// SLIDER CARD
 
 /**
- * creates the html for the card container
- * @returns a div html node
+ * carousel slide card
+ * @returns html node of card container.
  */
-export const card = () => {
+export const sliderCard = () => {
   const container = document.createElement("div");
-  container.className = "w-90 mt-5 md:mt-0";
+  container.className = "card-itm absolute w-full top-0 bottom-0 max-h-32 sm-tablet:max-h-44 xl:max-h-96";
 
   return container;
 };
@@ -26,11 +26,9 @@ export const imageHtml = (media) => {
   }
 
   const figureBox = document.createElement("figure");
-  figureBox.className = "bg-paper-white";
   const img = document.createElement("img");
-  img.className = "corner h-full w-full object-cover md:max-h-36 lg:max-h-56 xl:max-h-40 shadow-lg";
+  img.className = "corner h-full w-full object-cover max-h-32 sm-tablet:max-h-44 sm:max-h-52 lg:max-h-64 xl:max-h-96";
   img.src = image;
-  img.onerror = `this.src="/assets/images/placeholder/Item-placeholder.jpg"`;
 
   figureBox.appendChild(img);
 
@@ -41,7 +39,7 @@ export const imageHtml = (media) => {
  * @param {string} title contains the title of the listing
  * @returns a html node with the title.
  */
-export const contentHeader = (title) => {
+const contentHeader = (title) => {
   const contentTitle = document.createElement("h3");
   contentTitle.className = "card-title text-xs md:text-sm";
   contentTitle.textContent = title;
@@ -54,9 +52,9 @@ export const contentHeader = (title) => {
  * @param {string} info contains the description provided from the API
  * @returns a html node with the description
  */
-export const description = (info) => {
+const description = (info) => {
   const paragraph = document.createElement("p");
-  paragraph.className = "mt-1 text-xs md:text-sm";
+  paragraph.className = "mt-1 text-xs md:text-sm truncate";
   paragraph.textContent = info;
 
   return paragraph;
@@ -67,7 +65,7 @@ export const description = (info) => {
  * @param {Array} tag contains an array of tags provided from the api
  * @returns a html node with the tags
  */
-export const tagsHtml = (tag) => {
+const tagsHtml = (tag) => {
   const tagHtml = document.createElement("div");
   tagHtml.className = "text-xs md:text-sm font-bold";
   tagHtml.textContent = tag;
@@ -80,7 +78,7 @@ export const tagsHtml = (tag) => {
  * @param {Array} bid contains the array of the bids.
  * @returns html node with amount of bids and total bid.
  */
-export const bids = (bid) => {
+const bids = (bid) => {
   let bidAmount = 0;
 
   for (let i = 0; i < bid.length; i++) {
@@ -108,7 +106,12 @@ export const bids = (bid) => {
   return bidsWrapper;
 };
 
-export const listingContent = (listing) => {
+/**
+ * Creates the complete html node for the slider
+ * @param {Array} listing contains the results from the api fetch
+ * @returns a complete assembled html node of necessary objects.
+ */
+export const sliderContent = (listing) => {
   const tags = listing.tags;
 
   /**
@@ -125,17 +128,19 @@ export const listingContent = (listing) => {
   });
 
   /**
-   * content to hold everything together
+   * content to hold everything together. QUESTIONABLE?
    */
-  const contentContainer = document.createElement("div");
+  const contentContainer = document.createElement("a");
+  contentContainer.className = "cursor-pointer";
+  contentContainer.href = `/pages/details/index.html?id=${listing.id}`;
 
   /**
    * about listing container
    */
   const contentAbout = document.createElement("div");
-  contentAbout.className = "border border-paper-white bg-midnight-blue p-2 shadow-md mt-1.5 shadow-lg";
+  contentAbout.className = "border border-paper-white bg-midnight-blue p-2 shadow-md mt-1.5";
 
-  contentAbout.append(contentHeader(listing.title), bids(listing.bids));
+  contentAbout.append(contentHeader(listing.title), description(listing.description), tagsWrapper, bids(listing.bids));
 
   // appends content to the content container.
   contentContainer.append(imageHtml(listing.media), contentAbout);
