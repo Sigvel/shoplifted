@@ -17,6 +17,7 @@ Non registered users may search listings and go into listings, but they cant mak
 - Vanilla Javascript
 - Tailwind CSS
 - Noroff Auction API
+- Netlify For Hosting
 
 ## Getting started
 
